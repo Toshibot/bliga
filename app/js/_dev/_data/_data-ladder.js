@@ -5,16 +5,12 @@
 function dataLadder() { 
 
     
-    $.getJSON('../data/dummy_data.json', function (json) {
+    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
         var round = $('.c-ladder__round');
 
-        // console.log(json);
-        // Round Number
-        // round.text('AFL Ladder ' + json.round.name);
-
         // Construct the Ladder
-        for (i = 0; i < json.teams.length; i++) {
-            const element = json.teams[i];
+        for (i = 0; i < json.length; i++) {
+            const element = json[i];
             ladderItem(element, i+1);
         }
     });
