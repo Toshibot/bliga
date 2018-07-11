@@ -4,25 +4,25 @@ function teamAbrev(array){
     if (team == '1. FC Nürnberg') {
         return 'FCN';
     } else if (team == '1. FSV Mainz 05') {
-        return 'MNZ';
+        return 'MAI';
     } else if (team == 'Bayer Leverkusen') {
-        return 'LEV';
+        return 'B04';
     } else if (team == 'Borussia Dortmund') {
-        return 'BVB';
+        return 'DOR';
     } else if (team == 'Borussia Mönchengladbach') {
         return 'BMG';
     } else if (team == 'Eintracht Frankfurt') {
-        return 'EFR';
+        return 'SGE';
     } else if (team == 'FC Augsburg') {
         return 'AUG';
     } else if (team == 'FC Bayern') {
-        return 'FCB';
+        return 'BAY';
     } else if (team == 'FC Schalke 04') {
         return 'S04';
     } else if (team == 'Fortuna Düsseldorf') {
-        return 'DUS';
+        return 'DU';
     } else if (team == 'Hannover 96') {
-        return 'H96';
+        return 'HAN';
     } else if (team == 'Hertha BSC') {
         return 'BSC';
     } else if (team == 'RB Leipzig') {
@@ -32,10 +32,10 @@ function teamAbrev(array){
     } else if (team == 'TSG 1899 Hoffenheim') {
         return 'TSG';
     } else if (team == 'VfB Stuttgart') {
-        return 'STG';
+        return 'STU';
     } else if (team == 'VfL Wolfsburg') {
-        return 'WOL';
+        return 'WOB';
     } else if (team == 'Werder Bremen') {
-        return 'WBR';
+        return 'SVW';
     }
 }
