@@ -1548,15 +1548,15 @@ body {
   .c-ladder__points-for, .c-ladder__points-against {
     display: none !important; }
   .c-ladder__percentage {
-    -ms-flex-preferred-size: 16.667%;
-    -webkit-flex-basis: 16.667%;
-    flex-basis: 16.667%;
-    max-width: 16.667%; }
+    -ms-flex-preferred-size: 8.333%;
+    -webkit-flex-basis: 8.333%;
+    flex-basis: 8.333%;
+    max-width: 8.333%; }
   .c-ladder__team {
-    -ms-flex-preferred-size: 33.333%;
-    -webkit-flex-basis: 33.333%;
-    flex-basis: 33.333%;
-    max-width: 33.333%; } }
+    -ms-flex-preferred-size: 41.667%;
+    -webkit-flex-basis: 41.667%;
+    flex-basis: 41.667%;
+    max-width: 41.667%; } }
 
 @media screen and (max-width: 41.6875em) {
   .c-ladder__item div {
@@ -1564,13 +1564,13 @@ body {
     padding-right: 0; }
   .c-ladder__item div:nth-child(even) {
     background: transparent; }
-  .c-ladder__percentage {
+  .c-ladder__played, .c-ladder__wins, .c-ladder__losses, .c-ladder__draws, .c-ladder__percentage {
     display: none !important; }
   .c-ladder__team {
-    -ms-flex-preferred-size: 50%;
-    -webkit-flex-basis: 50%;
-    flex-basis: 50%;
-    max-width: 50%; } }
+    -ms-flex-preferred-size: 83.333%;
+    -webkit-flex-basis: 83.333%;
+    flex-basis: 83.333%;
+    max-width: 83.333%; } }
 
 @media screen and (min-width: 75em) {
   .c-fixture h2 {

@@ -141,11 +141,11 @@
         }
 
         &__percentage {
-            @include flex-size($width-2);
+            @include flex-size($width-1);
         }
 
         &__team {
-            @include flex-size($width-4);
+            @include flex-size($width-5);
         }
     }
 
@@ -162,12 +162,16 @@
             }
         }
 
+        &__played,
+        &__wins,
+        &__losses,
+        &__draws,
         &__percentage {
             display: none !important;
         }
 
         &__team {
-            @include flex-size($width-6);
+            @include flex-size($width-10);
         }
     }
 }
