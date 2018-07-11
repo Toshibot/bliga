@@ -1558,8 +1558,8 @@ body {
 
 @media screen and (max-width: 41.6875em) {
   .c-ladder__item div {
-    padding-left: 6.25px;
-    padding-right: 6.25px; }
+    padding-left: 0;
+    padding-right: 0; }
   .c-ladder__item div:nth-child(even) {
     background: transparent; }
   .c-ladder__percentage {
@@ -1609,7 +1609,9 @@ body {
 .c-fixture__team {
   display: inline-block;
   text-align: center;
-  width: 75px; }
+  width: 75px;
+  font-size: 12px;
+  line-height: 16px; }
   .c-fixture__team img,
   .c-fixture__team span {
     display: block; }
@@ -1621,6 +1623,9 @@ body {
     height: 75px;
     text-align: center;
     margin: 12.5px 0; }
+
+.c-fixture__score {
+  font-size: 16px; }
 
 .c-date__day {
   display: inline-block;

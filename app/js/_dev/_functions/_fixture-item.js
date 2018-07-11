@@ -17,13 +17,13 @@ function fixtureItem(array) {
                 '<div class="c-fixture__team js-fixture-team-1">' +
                     '<img class="js-team-img" src="' + homeKit(array.Team1.TeamName) + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team1.TeamName) + '</span>' +
-                    '<span class="js-score-text">' + array.team_A.score + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + array.team_A.score + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
                     '<img class="js-team-img" src="' + awayKit(array.Team2.TeamName) + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team2.TeamName) + '</span>' +
-                    '<span class="js-score-text">' + array.team_B.score + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + array.team_B.score + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + array.Location.LocationStadium + '</div>' +
             '</div>'
@@ -42,13 +42,13 @@ function fixtureItem(array) {
                 '<div class="c-fixture__team js-fixture-team-1">' +
                     '<img class="js-team-img" src="' + homeKit(array.Team1.TeamName) + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team1.TeamName) + '</span>' +
-                    '<span class="js-score-text">-</span>' +
+                    '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
                     '<img class="js-team-img" src="' + awayKit(array.Team2.TeamName) + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team2.TeamName) + '</span>' +
-                    '<span class="js-score-text">-</span>' +
+                    '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + array.Location.LocationStadium + '</div>' +
             '</div>'
