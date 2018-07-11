@@ -1567,15 +1567,10 @@ body {
   .c-ladder__played, .c-ladder__wins, .c-ladder__losses, .c-ladder__draws, .c-ladder__percentage {
     display: none !important; }
   .c-ladder__team {
-    -ms-flex-preferred-size: 75%;
-    -webkit-flex-basis: 75%;
-    flex-basis: 75%;
-    max-width: 75%; }
-  .c-ladder__points {
-    -ms-flex-preferred-size: 16.667%;
-    -webkit-flex-basis: 16.667%;
-    flex-basis: 16.667%;
-    max-width: 16.667%; } }
+    -ms-flex-preferred-size: 83.333%;
+    -webkit-flex-basis: 83.333%;
+    flex-basis: 83.333%;
+    max-width: 83.333%; } }
 
 @media screen and (min-width: 75em) {
   .c-fixture h2 {

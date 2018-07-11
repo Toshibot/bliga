@@ -171,11 +171,7 @@
         }
 
         &__team {
-            @include flex-size($width-9);
-        }
-
-        &__points {
-            @include flex-size($width-2);
+            @include flex-size($width-10);
         }
     }
 }
