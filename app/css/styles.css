@@ -1473,12 +1473,14 @@ body {
       background: transparent !important; }
       .c-ladder__item-0 div.c-ladder__team {
         padding: 12.5px !important; }
-  .c-ladder__item-1, .c-ladder__item-2, .c-ladder__item-3, .c-ladder__item-4 {
+  .c-ladder__item-1 {
     background: #ccebd1; }
-  .c-ladder__item-5, .c-ladder__item-6, .c-ladder__item-7, .c-ladder__item-8 {
+  .c-ladder__item-2, .c-ladder__item-3, .c-ladder__item-4 {
     background: #bddaf7; }
-  .c-ladder__item-16 {
+  .c-ladder__item-5, .c-ladder__item-6, .c-ladder__item-7 {
     background: #fde1b4; }
+  .c-ladder__item-16 {
+    background: #fcfdcc; }
   .c-ladder__item-17, .c-ladder__item-18 {
     background: #fac4cd; }
 
