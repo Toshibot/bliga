@@ -75,48 +75,6 @@ var ladder = function(){
 
 }
 
-// Data - Fixture/Results
-
-function dataFixture() {
-    $.getJSON('https://www.openligadb.de/api/getcurrentgroup/bl1', function(json){
-        $('.js-fixture-round').text(json.GroupName);
-    })
-    
-    // Dummy Dev File
-    $.getJSON('https://www.openligadb.de/api/getmatchdata/bl1', function(json){
-
-        console.log('fixture loaded');
-
-
-        for (i = 0; i < json.length; i++) {
-            const element = json[i];
-            fixtureItem(element);
-        }
-
-    });
-
-}
-
-
-
-//
-// Data
-// ====
-function dataLadder() { 
-
-    
-    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
-        var round = $('.c-ladder__round');
-
-        // Construct the Ladder
-        for (i = 0; i < json.length; i++) {
-            const element = json[i];
-            ladderItem(element, i+1);
-        }
-    });
-
-}
-
 function dateTime(d) {
 
     var date = new Date(d);
@@ -175,7 +133,7 @@ function dateTime(d) {
 
     function time(d) {
         var h = d.getHours();
-        var m = d.getMinutes();
+        var m = ('0'+d.getMinutes()).slice(-2);
 
         return h + ':' + m;
     }
@@ -580,3 +538,47 @@ $(window).on('resize', function() {
 // gitButton.addEventListener('click', function(){
 //     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
 // });
+
+
+// Data - Fixture/Results
+
+function dataFixture() {
+    $.getJSON('https://www.openligadb.de/api/getcurrentgroup/bl1', function(json){
+        $('.js-fixture-round').text(json.GroupName);
+    })
+    
+    // Dummy Dev File
+    $.getJSON('https://www.openligadb.de/api/getmatchdata/bl1', function(json){
+
+        console.log('fixture loaded');
+        console.log(json);
+
+
+        for (i = 0; i < json.length; i++) {
+            const element = json[i];
+            fixtureItem(element);
+        }
+
+    });
+
+}
+
+
+
+//
+// Data
+// ====
+function dataLadder() { 
+
+    
+    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
+        var round = $('.c-ladder__round');
+
+        // Construct the Ladder
+        for (i = 0; i < json.length; i++) {
+            const element = json[i];
+            ladderItem(element, i+1);
+        }
+    });
+
+}

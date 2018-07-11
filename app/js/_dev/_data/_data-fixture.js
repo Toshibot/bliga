@@ -10,6 +10,7 @@ function dataFixture() {
     $.getJSON('https://www.openligadb.de/api/getmatchdata/bl1', function(json){
 
         console.log('fixture loaded');
+        console.log(json);
 
 
         for (i = 0; i < json.length; i++) {
