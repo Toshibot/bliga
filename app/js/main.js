@@ -297,7 +297,7 @@ function awayKit(array) {
     } else if (team == '1. FSV Mainz 05') {
         return 'img/teams/Mainz/Away.png';
     } else if (team == 'Bayer Leverkusen') {
-        return 'img/teams/Leverkusen/Away.png';
+        return 'img/teams/Leverkusen/Third.png';
     } else if (team == 'Borussia Dortmund') {
         return 'img/teams/Dortmund/Away.png';
     } else if (team == 'Borussia Mönchengladbach') {
