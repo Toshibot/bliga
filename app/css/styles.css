@@ -1318,7 +1318,8 @@ body {
   .o-footer__content {
     width: 61.25em;
     margin: 0 auto;
-    text-align: center; }
+    text-align: center;
+    font-size: 16px; }
     @media only screen and (max-width: 64em) {
       .o-footer__content {
         width: 100%; } }
@@ -1646,3 +1647,6 @@ body {
   display: inline-block;
   margin-right: 5px;
   font-weight: 600; }
+
+.c-date__time {
+  font-size: 16px; }
