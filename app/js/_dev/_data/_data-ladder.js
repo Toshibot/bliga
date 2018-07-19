@@ -3,7 +3,6 @@
 // Data
 // ====
 function dataLadder() { 
-
     
     $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
         var round = $('.c-ladder__round');
@@ -13,6 +12,7 @@ function dataLadder() {
             const element = json[i];
             ladderItem(element, i+1);
         }
+
     });
 
 }

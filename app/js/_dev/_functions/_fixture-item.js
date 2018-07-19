@@ -15,13 +15,13 @@ function fixtureItem(array) {
                     '<span class="c-date__time">' + date.time + '</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + homeKit(array.Team1.TeamName) + '" />' +
+                    '<img class="js-team-img" src="' + kitImg(array.Team1.TeamName,array.Team2.TeamName,"Home") + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team1.TeamName) + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.team_A.score + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + awayKit(array.Team2.TeamName) + '" />' +
+                    '<img class="js-team-img" src="' + kitImg(array.Team1.TeamName,array.Team2.TeamName,"Away") + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team2.TeamName) + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.team_B.score + '</span>' +
                 '</div>' +
@@ -40,13 +40,13 @@ function fixtureItem(array) {
                     '<span class="c-date__time">' + date.time + '</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + homeKit(array.Team1.TeamName) + '" />' +
+                    '<img class="js-team-img" src="' + kitImg(array.Team1.TeamName,array.Team2.TeamName,"Home") + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team1.TeamName) + '</span>' +
                     '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + awayKit(array.Team2.TeamName) + '" />' +
+                    '<img class="js-team-img" src="' + kitImg(array.Team1.TeamName,array.Team2.TeamName,"Away") + '" />' +
                     '<span class="js-team-text">' + teamAbrev(array.Team2.TeamName) + '</span>' +
                     '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +

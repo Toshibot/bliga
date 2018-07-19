@@ -12,11 +12,10 @@ function dataFixture() {
         console.log('fixture loaded');
         console.log(json);
 
-
-        for (i = 0; i < json.length; i++) {
-            const element = json[i];
-            fixtureItem(element);
-        }
+            for (i = 0; i < json.length; i++) {
+                const element = json[i];
+                fixtureItem(element);
+            }
 
     });
 
