@@ -108,6 +108,7 @@
     &__points {
         @include flex-size($width-1);
         text-align: center;
+        color: $color-grey-dark;
     }
 
     &__icon {
@@ -120,6 +121,11 @@
     &__points-for,
     &__points-against {
         display: none !important;
+    }
+
+    &__points {
+        font-weight: 600;
+        color: $color-black;
     }
 
     &__percentage {
