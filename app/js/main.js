@@ -376,9 +376,13 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Schalke/Away.png';
             }
 
-        // Fortuna Düsseldorf - Unidentified
+        // Fortuna Düsseldorf - White (Possible Third Kit Coming)
         } else if (awayname == "Fortuna Düsseldorf") {
-            return 'img/teams/Duesseldorf/Away.png';
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+                return 'img/teams/Duesseldorf/Home.png';
+            } else {
+                return 'img/teams/Duesseldorf/Away.png';
+            }
 
         // Hannover 96 - Black
         } else if (awayname == "Hannover 96") {
