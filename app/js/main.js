@@ -5,6 +5,48 @@
 // Core Functions 
 dataLadder();
 dataFixture();
+
+// Data - Fixture/Results
+
+function dataFixture() {
+    $.getJSON('https://www.openligadb.de/api/getcurrentgroup/bl1', function(json){
+        $('.js-fixture-round').text(json.GroupName);
+    })
+    
+    // Dummy Dev File
+    $.getJSON('https://www.openligadb.de/api/getmatchdata/bl1', function(json){
+
+        console.log('fixture loaded');
+        console.log(json);
+
+            for (i = 0; i < json.length; i++) {
+                const element = json[i];
+                fixtureItem(element);
+            }
+
+    });
+
+}
+
+
+
+//
+// Data
+// ====
+function dataLadder() { 
+    
+    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
+        var round = $('.c-ladder__round');
+
+        // Construct the Ladder
+        for (i = 0; i < json.length; i++) {
+            const element = json[i];
+            ladderItem(element, i+1);
+        }
+
+    });
+
+}
 // ==========================================================================
 // Fixture - Functions
 // ==========================================================================
@@ -72,48 +114,6 @@ var ladder = function(){
 
     var dogs = $('.c-ladder__team:contains("Bulldogs")');
     dogs.children('img').attr('src', 'img/teams/dogs.svg');
-
-}
-
-// Data - Fixture/Results
-
-function dataFixture() {
-    $.getJSON('https://www.openligadb.de/api/getcurrentgroup/bl1', function(json){
-        $('.js-fixture-round').text(json.GroupName);
-    })
-    
-    // Dummy Dev File
-    $.getJSON('https://www.openligadb.de/api/getmatchdata/bl1', function(json){
-
-        console.log('fixture loaded');
-        console.log(json);
-
-            for (i = 0; i < json.length; i++) {
-                const element = json[i];
-                fixtureItem(element);
-            }
-
-    });
-
-}
-
-
-
-//
-// Data
-// ====
-function dataLadder() { 
-    
-    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
-        var round = $('.c-ladder__round');
-
-        // Construct the Ladder
-        for (i = 0; i < json.length; i++) {
-            const element = json[i];
-            ladderItem(element, i+1);
-        }
-
-    });
 
 }
 
