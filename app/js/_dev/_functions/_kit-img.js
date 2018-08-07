@@ -103,7 +103,7 @@ function kitImg(homename,awayname,location){
         // Eintracht Frankfurt - White
         } else if (awayname == "Eintracht Frankfurt") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Frankfurt/Home.png';
+                return 'img/teams/Frankfurt/Third.png';
             } else {
                 return 'img/teams/Frankfurt/Away.png';
             }
@@ -123,15 +123,15 @@ function kitImg(homename,awayname,location){
         // FC Schalke 04 - White
         } else if (awayname == "FC Schalke 04") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Schalke/Home.png';
+                return 'img/teams/Schalke/Third.png';
             } else {
                 return 'img/teams/Schalke/Away.png';
             }
 
-        // Fortuna Düsseldorf - White (Possible Third Kit Coming)
+        // Fortuna Düsseldorf - White
         } else if (awayname == "Fortuna Düsseldorf") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Duesseldorf/Home.png';
+                return 'img/teams/Duesseldorf/Third.png';
             } else {
                 return 'img/teams/Duesseldorf/Away.png';
             }
@@ -139,7 +139,7 @@ function kitImg(homename,awayname,location){
         // Hannover 96 - Black
         } else if (awayname == "Hannover 96") {
             if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
-                return 'img/teams/Hannover/Home.png';
+                return 'img/teams/Hannover/Third.png';
             } else {
                 return 'img/teams/Hannover/Away.png';
             }
@@ -187,7 +187,7 @@ function kitImg(homename,awayname,location){
         // VfL Wolfsburg - White
         } else if (awayname == "VfL Wolfsburg") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Wolfsburg/Home.png';
+                return 'img/teams/Wolfsburg/Third.png';
             } else {
                 return 'img/teams/Wolfsburg/Away.png';
             }

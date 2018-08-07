@@ -5,75 +5,6 @@
 // Core Functions 
 dataLadder();
 dataFixture();
-// ==========================================================================
-// Fixture - Functions
-// ==========================================================================
-
-
-// 
-// Ladder
-// ======
-
-var ladder = function(){
-
-    // GWS
-    var giants = $('.c-ladder__team:contains("Greater Western Sydney")'); 
-    giants.children('span').text('GWS');
-    giants.children('img').attr('src', 'img/teams/gws.svg');
-
-    var hawks = $('.c-ladder__team:contains("Hawthorn")');
-    hawks.children('img').attr('src', 'img/teams/hawks.svg');
-
-    var suns = $('.c-ladder__team:contains("Gold Coast")');
-    suns.children('img').attr('src', 'img/teams/suns.svg');
-
-    var swans = $('.c-ladder__team:contains("Sydney")');
-    swans.children('img').attr('src', 'img/teams/swans.svg');
-
-    var saints = $('.c-ladder__team:contains("St Kilda")');
-    saints.children('img').attr('src', 'img/teams/saints.svg');
-
-    var tigers = $('.c-ladder__team:contains("Richmond")');
-    tigers.children('img').attr('src', 'img/teams/tigers.svg');
-
-    var bombers = $('.c-ladder__team:contains("Essendon")');
-    bombers.children('img').attr('src', 'img/teams/bombers.svg');
-
-    var cats = $('.c-ladder__team:contains("Geelong")');
-    cats.children('img').attr('src', 'img/teams/cats.svg');
-
-    var demons = $('.c-ladder__team:contains("Melbourne")');
-    demons.children('img').attr('src', 'img/teams/demons.svg');
-
-    var crows = $('.c-ladder__team:contains("Adelaide")');
-    crows.children('img').attr('src', 'img/teams/crows.svg');
-
-    var blues = $('.c-ladder__team:contains("Carlton")');
-    blues.children('img').attr('src', 'img/teams/blues.svg');
-    
-    // Port Adelaide
-    var port = $('.c-ladder__team:contains("Port Adelaide")');
-    port.children('img').attr('src', 'img/teams/port.svg');
-
-    var lions = $('.c-ladder__team:contains("Brisbane")');
-    lions.children('img').attr('src', 'img/teams/lions.svg');
-
-    var eagles = $('.c-ladder__team:contains("West Coast")');
-    eagles.children('img').attr('src', 'img/teams/eagles.svg');
-
-    var kangaroos = $('.c-ladder__team:contains("North Melbourne")');
-    kangaroos.children('img').attr('src', 'img/teams/kangaroos.svg');
-
-    var magpies = $('.c-ladder__team:contains("Collingwood")');
-    magpies.children('img').attr('src', 'img/teams/magpies.svg');
-
-    var dockers = $('.c-ladder__team:contains("Fremantle")');
-    dockers.children('img').attr('src', 'img/teams/dockers.svg');
-
-    var dogs = $('.c-ladder__team:contains("Bulldogs")');
-    dogs.children('img').attr('src', 'img/teams/dogs.svg');
-
-}
 
 // Data - Fixture/Results
 
@@ -351,7 +282,7 @@ function kitImg(homename,awayname,location){
         // Eintracht Frankfurt - White
         } else if (awayname == "Eintracht Frankfurt") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Frankfurt/Home.png';
+                return 'img/teams/Frankfurt/Third.png';
             } else {
                 return 'img/teams/Frankfurt/Away.png';
             }
@@ -371,15 +302,15 @@ function kitImg(homename,awayname,location){
         // FC Schalke 04 - White
         } else if (awayname == "FC Schalke 04") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Schalke/Home.png';
+                return 'img/teams/Schalke/Third.png';
             } else {
                 return 'img/teams/Schalke/Away.png';
             }
 
-        // Fortuna Düsseldorf - White (Possible Third Kit Coming)
+        // Fortuna Düsseldorf - White
         } else if (awayname == "Fortuna Düsseldorf") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Duesseldorf/Home.png';
+                return 'img/teams/Duesseldorf/Third.png';
             } else {
                 return 'img/teams/Duesseldorf/Away.png';
             }
@@ -387,7 +318,7 @@ function kitImg(homename,awayname,location){
         // Hannover 96 - Black
         } else if (awayname == "Hannover 96") {
             if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
-                return 'img/teams/Hannover/Home.png';
+                return 'img/teams/Hannover/Third.png';
             } else {
                 return 'img/teams/Hannover/Away.png';
             }
@@ -435,7 +366,7 @@ function kitImg(homename,awayname,location){
         // VfL Wolfsburg - White
         } else if (awayname == "VfL Wolfsburg") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Wolfsburg/Home.png';
+                return 'img/teams/Wolfsburg/Third.png';
             } else {
                 return 'img/teams/Wolfsburg/Away.png';
             }
