@@ -15,12 +15,12 @@ function dataFixture(self) {
     self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
     self.matchdayURI = "https://api.football-data.org/v2/competitions";
 
-    // Matchday
-    self.ajax(self.matchdayURI, 'GET').done(function(data){
-        var competition = data.competitions[63];
+    // // Matchday
+    // self.ajax(self.matchdayURI, 'GET').done(function(data){
+    //     var competition = data.competitions[63];
 
-        matchday = competition.currentSeason.currentMatchday;
-    });
+    //     matchday = competition.currentSeason.currentMatchday;
+    // });
 
     self.ajax(self.matchesURI, 'GET').done(function(data) {
 
@@ -28,7 +28,7 @@ function dataFixture(self) {
         var today = new Date;
         var testDate = new Date('2018-04-24');
         var currentRound = [];
-        var currentRoundNo = matchday;
+        var currentRoundNo = roundCalc(today);
 
         $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
 
@@ -99,6 +99,59 @@ function data() {
    dataFixture(self);
    dataLadder(self);
 }
+//
+// Layout - Vertically Centered
+// ==========================================================================
+
+// ***
+// This function vertically centers an object element within 
+// its parent element by calculating the height of the parent,
+// the height of the child and adding padding to the top and 
+// bottom of the child element.
+//
+// Parent Element
+// --------------
+// The parent element must be a jQuery object.
+// eg: $('.o-vert-center')
+//
+// Child Element
+// -------------
+// The child element must be a direct child of the parent and
+// be passed through the function with only its classname.
+// eg: '.o-vert-center__object'
+// *
+
+function vertCenter(element, child) {
+
+    var parentHeight = element.parent().height();
+    // This will give the element the same height
+    // and line-height as it's parent container.
+    element.css({
+        'height': parentHeight + 'px',
+        'line-height': parentHeight + 'px'
+    });
+    
+    element.children(child).css({
+        'height': element.children(child).height(),
+        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
+        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
+    });
+}
+
+function clearStyles(element, child) {
+    element.attr('style', '');
+    child.attr('style', '');
+}
+
+// Function applied to the following parent/child classes:
+// vertCenter($('.o-vert-center'), '.o-vert-center__object');
+
+// On window resize clear previous styles then re-run the function.
+$(window).on('resize', function() {
+    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
+    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
+});
+
 
 function dateTime(d) {
 
@@ -497,6 +550,38 @@ function ladderItem(array, number) {
     $('.c-ladder__item-' + number + ' div.c-ladder__percentage').text(array.goalDifference);
     $('.c-ladder__item-' + number + ' div.c-ladder__points').text(array.points);
 }
+function roundCalc(d) {
+   var currentDate = new Date(d);
+   var month = currentDate.getMonth();
+   var date = currentDate.getDate();
+   var year = currentDate.getFullYear();
+
+   // Gameday 1
+   if (year == "2018" && month <= 7 && date <= 27) {
+       return 1;
+
+   // Gameday 2    
+   } else if (year == "2018" && month == 7 && date <= 31 || year == "2018" && month == 8 && date == 3){
+       return 2;
+
+   // Gameday 3    
+   } else if (year == "2018" && month == 8 && date <= 17){
+      return 3;
+
+   // Gameday 4    
+   } else if (year == "2018" && month == 8 && date <= 24){
+      return 4;
+
+   // Gameday 5    
+   } else if (year == "2018" && month == 8 && date <= 27){
+      return 5;
+
+   // Gameday 6    
+   } else if (year == "2018" && month == 8 && date <= 31){
+      return 6;
+
+   }
+}
 function teamAbrev(array){
     var team = array;
 
@@ -644,56 +729,3 @@ function teamImg(team) {
 // gitButton.addEventListener('click', function(){
 //     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
 // });
-
-//
-// Layout - Vertically Centered
-// ==========================================================================
-
-// ***
-// This function vertically centers an object element within 
-// its parent element by calculating the height of the parent,
-// the height of the child and adding padding to the top and 
-// bottom of the child element.
-//
-// Parent Element
-// --------------
-// The parent element must be a jQuery object.
-// eg: $('.o-vert-center')
-//
-// Child Element
-// -------------
-// The child element must be a direct child of the parent and
-// be passed through the function with only its classname.
-// eg: '.o-vert-center__object'
-// *
-
-function vertCenter(element, child) {
-
-    var parentHeight = element.parent().height();
-    // This will give the element the same height
-    // and line-height as it's parent container.
-    element.css({
-        'height': parentHeight + 'px',
-        'line-height': parentHeight + 'px'
-    });
-    
-    element.children(child).css({
-        'height': element.children(child).height(),
-        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
-        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
-    });
-}
-
-function clearStyles(element, child) {
-    element.attr('style', '');
-    child.attr('style', '');
-}
-
-// Function applied to the following parent/child classes:
-// vertCenter($('.o-vert-center'), '.o-vert-center__object');
-
-// On window resize clear previous styles then re-run the function.
-$(window).on('resize', function() {
-    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
-    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
-});

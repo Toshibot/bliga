@@ -9,12 +9,12 @@ function dataFixture(self) {
     self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
     self.matchdayURI = "https://api.football-data.org/v2/competitions";
 
-    // Matchday
-    self.ajax(self.matchdayURI, 'GET').done(function(data){
-        var competition = data.competitions[63];
+    // // Matchday
+    // self.ajax(self.matchdayURI, 'GET').done(function(data){
+    //     var competition = data.competitions[63];
 
-        matchday = competition.currentSeason.currentMatchday;
-    });
+    //     matchday = competition.currentSeason.currentMatchday;
+    // });
 
     self.ajax(self.matchesURI, 'GET').done(function(data) {
 
@@ -22,7 +22,7 @@ function dataFixture(self) {
         var today = new Date;
         var testDate = new Date('2018-04-24');
         var currentRound = [];
-        var currentRoundNo = matchday;
+        var currentRoundNo = roundCalc(today);
 
         $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
 
