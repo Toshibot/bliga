@@ -5,10 +5,10 @@
 function dataFixture() {
 
     // Variables
+    var self = this;
     var matchday = '';
     self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
     self.matchdayURI = "https://api.football-data.org/v2/competitions";
-    var self = this;
 
     self.ajax = function(uri, method, data) {
        var request = {
