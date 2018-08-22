@@ -5,9 +5,9 @@ function teamImg(team) {
         return 'img/teams/Nuernberg/Logo.png';
     } else if (team == '1. FSV Mainz 05') {
         return 'img/teams/Mainz/Logo.png';
-    } else if (team == 'Bayer Leverkusen') {
+    } else if (team == 'Bayer 04 Leverkusen') {
         return 'img/teams/Leverkusen/Logo.png';
-    } else if (team == 'Borussia Dortmund') {
+    } else if (team == 'BV Borussia 09 Dortmund') {
         return 'img/teams/Dortmund/Logo.png';
     } else if (team == 'Borussia Mönchengladbach') {
         return 'img/teams/Gladbach/Logo.png';
@@ -15,11 +15,11 @@ function teamImg(team) {
         return 'img/teams/Frankfurt/Logo.png';
     } else if (team == 'FC Augsburg') {
         return 'img/teams/Augsburg/Logo.png';
-    } else if (team == 'FC Bayern') {
+    } else if (team == 'FC Bayern München') {
         return 'img/teams/Bayern/Logo.png';
     } else if (team == 'FC Schalke 04') {
         return 'img/teams/Schalke/Logo.png';
-    } else if (team == 'Fortuna Düsseldorf') {
+    } else if (team == 'TSV Fortuna 95 Düsseldorf') {
         return 'img/teams/Duesseldorf/Logo.png';
     } else if (team == 'Hannover 96') {
         return 'img/teams/Hannover/Logo.png';
@@ -35,7 +35,7 @@ function teamImg(team) {
         return 'img/teams/Stuttgart/Logo.png';
     } else if (team == 'VfL Wolfsburg') {
         return 'img/teams/Wolfsburg/Logo.png';
-    } else if (team == 'Werder Bremen') {
+    } else if (team == 'SV Werder Bremen') {
         return 'img/teams/Bremen/Logo.png';
     }
 }

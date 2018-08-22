@@ -2,17 +2,21 @@
 //
 // Data
 // ====
-function dataLadder() { 
-    
-    $.getJSON('https://www.openligadb.de/api/getbltable/bl1/2018', function (json) {
-        var round = $('.c-ladder__round');
+function dataLadder(self) { 
+
+    self.tasksURI = "https://api.football-data.org/v2/competitions/2002/standings";
+
+    self.ajax(self.tasksURI, 'GET').done(function(data) {
+        // console.log(data);
+
+        var ladder = data.standings[0].table;
+        console.log(ladder);
 
         // Construct the Ladder
-        for (i = 0; i < json.length; i++) {
-            const element = json[i];
+        for (i = 0; i < ladder.length; i++) {
+            const element = ladder[i];
             ladderItem(element, i+1);
         }
-
-    });
+    })
 
 }

@@ -1483,9 +1483,7 @@ body {
     background: #bddaf7; }
   .c-ladder__item-5, .c-ladder__item-6 {
     background: #fde1b4; }
-  .c-ladder__item-16 {
-    background: #fcfdcc; }
-  .c-ladder__item-17, .c-ladder__item-18 {
+  .c-ladder__item-18, .c-ladder__item-19, .c-ladder__item-20 {
     background: #fac4cd; }
 
 .c-ladder__position {
@@ -1573,13 +1571,17 @@ body {
     padding-right: 0; }
   .c-ladder__item div:nth-child(even) {
     background: transparent; }
-  .c-ladder__played, .c-ladder__wins, .c-ladder__losses, .c-ladder__draws, .c-ladder__percentage {
+  .c-ladder__wins, .c-ladder__losses, .c-ladder__draws {
     display: none !important; }
+  .c-ladder__played {
+    margin-left: 4.1665%; }
+  .c-ladder__percentage {
+    margin-right: 4.1665%; }
   .c-ladder__team {
-    -ms-flex-preferred-size: 83.333%;
-    -webkit-flex-basis: 83.333%;
-    flex-basis: 83.333%;
-    max-width: 83.333%; } }
+    -ms-flex-preferred-size: 58.333%;
+    -webkit-flex-basis: 58.333%;
+    flex-basis: 58.333%;
+    max-width: 58.333%; } }
 
 @media screen and (min-width: 75em) {
   .c-fixture h2 {
@@ -1608,7 +1610,7 @@ body {
   font-size: 12px; }
 
 .c-fixture__date {
-  padding: 25px 0 12.5px;
+  padding: 37.5px 0 12.5px;
   line-height: 1.5; }
 
 .c-fixture__vs {
