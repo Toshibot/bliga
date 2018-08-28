@@ -384,7 +384,7 @@ function kitImg(homename,awayname,location){
 
         // Borussia Dortmund - Red
         } else if (awayname == "BV Borussia 09 Dortmund") {
-            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "Fortuna TSV Fortuna 95 Düsseldorf"){
+            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
                 return 'img/teams/Dortmund/Home.png';
             } else {
                 return 'img/teams/Dortmund/Away.png';
@@ -427,7 +427,7 @@ function kitImg(homename,awayname,location){
             }
 
         // Fortuna Düsseldorf - White
-        } else if (awayname == "Fortuna TSV Fortuna 95 Düsseldorf") {
+        } else if (awayname == "TSV Fortuna 95 Düsseldorf") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
                 return 'img/teams/Duesseldorf/Third.png';
             } else {
@@ -461,7 +461,7 @@ function kitImg(homename,awayname,location){
         // SC Freiburg - Black
         } else if (awayname == "SC Freiburg") {
             if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
-                return 'img/teams/Freiburg/Home.png';
+                return 'img/teams/Freiburg/Third.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
             }
@@ -476,7 +476,7 @@ function kitImg(homename,awayname,location){
 
         // VfB Stuttgart - Red
         } else if (awayname == "VfB Stuttgart") {
-            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "Fortuna TSV Fortuna 95 Düsseldorf"){
+            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
                 return 'img/teams/Stuttgart/Third.png';
             } else {
                 return 'img/teams/Stuttgart/Away.png';
