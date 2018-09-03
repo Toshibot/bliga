@@ -525,23 +525,23 @@ function roundCalc(d) {
        return 1;
 
    // Gameday 2    
-   } else if (year == "2018" && month == 7 && date <= 31 || year == "2018" && month == 8 && date == 3){
+   } else if (year == "2018" && month == 7 && date <= 31 || year == "2018" && month == 8 && date == 2){
        return 2;
 
    // Gameday 3    
-   } else if (year == "2018" && month == 8 && date <= 17){
+   } else if (year == "2018" && month == 8 && date <= 16){
       return 3;
 
    // Gameday 4    
-   } else if (year == "2018" && month == 8 && date <= 24){
+   } else if (year == "2018" && month == 8 && date <= 23){
       return 4;
 
    // Gameday 5    
-   } else if (year == "2018" && month == 8 && date <= 27){
+   } else if (year == "2018" && month == 8 && date <= 26){
       return 5;
 
    // Gameday 6    
-   } else if (year == "2018" && month == 8 && date <= 31){
+   } else if (year == "2018" && month == 8 && date <= 30){
       return 6;
 
    }
@@ -682,6 +682,18 @@ function teamImg(team) {
         return 'img/teams/Bremen/Logo.png';
     }
 }
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
+
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -734,15 +746,3 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
-
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
