@@ -36,5 +36,29 @@ function roundCalc(d) {
    } else if (year == "2018" && month == 9 && date <= 21){
       return 8;
 
+   // Gameday 9    
+   } else if (year == "2018" && month == 9 && date <= 28){
+      return 9;
+
+   // Gameday 10    
+   } else if (year == "2018" && month == 9 && date <= 31 || year == "2018" && month == 10 && date <= 4){
+      return 10;
+
+   // Gameday 11    
+   } else if (year == "2018" && month == 10 && date <= 11){
+      return 11;
+
+   // Gameday 12    
+   } else if (year == "2018" && month == 10 && date <= 25){
+      return 12;
+
+   // Gameday 13    
+   } else if (year == "2018" && month == 10 && date <= 31 || year == "2018" && month == 11 && date <= 3){
+      return 13;
+
+   // Gameday 14    
+   } else if (year == "2018" && month == 11 && date <= 9){
+      return 14;
+
    }
 }
