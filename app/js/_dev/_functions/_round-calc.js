@@ -64,5 +64,17 @@ function roundCalc(d) {
    } else if (year == "2018" && month == 11 && date <= 16){
       return 15;
 
+   // Gameday 16    
+   } else if (year == "2018" && month == 11 && date <= 19){
+      return 16;
+
+   // Gameday 17    
+   } else if (year == "2018" && month == 11 && date <= 23){
+      return 17;
+
+   // Gameday 18    
+   } else if (year == "2019" && month == 0 && date <= 20){
+      return 18;
+
    }
 }

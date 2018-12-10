@@ -5,118 +5,6 @@
 // Core Functions 
 data();
 
-
-// Data - Fixture/Results
-
-function dataFixture() {
-
-    // Variables
-    var self = this;
-    var matchday = '';
-    self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
-    self.matchdayURI = "https://api.football-data.org/v2/competitions";
-
-    self.ajax = function(uri, method, data) {
-       var request = {
-          url: uri,
-          type: method,
-          accepts: "application/json",
-          cache: false,
-          dataType: "json",
-          data: JSON.stringify(data),
-          headers: {"X-Auth-Token": "5c8b70988e784fca8186b93d38b1bae7"},
-          error: function (jqXHR) {
-                console.log("ajax error " + jqXHR.status);
-          }
- 
-       };
- 
-       return $.ajax(request);
-    }
-
-    // // Matchday
-    // self.ajax(self.matchdayURI, 'GET').done(function(data){
-    //     var competition = data.competitions[63];
-
-    //     matchday = competition.currentSeason.currentMatchday;
-    // });
-
-    self.ajax(self.matchesURI, 'GET').done(function(data) {
-
-        var matches = data.matches;
-        var today = new Date;
-        var testDate = new Date('2018-04-24');
-        var currentRound = [];
-        var currentRoundNo = roundCalc(today);
-
-        $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
-
-        for (i = 0; i < matches.length; i++) {
-            const element = matches[i];
-            
-            if (element.matchday == currentRoundNo) {
-                currentRound.push(element);
-            }
-        }
-
-        console.log(data);
-
-        for (i = 0; i < currentRound.length; i++) {
-            const element = currentRound[i];
-
-            fixtureItem(element);
-        }
-    })
-}
-
-
-//
-// Data
-// ====
-function dataLadder() { 
-
-    var self = this;
-
-    self.ajax = function(uri, method, data) {
-       var request = {
-          url: uri,
-          type: method,
-          accepts: "application/json",
-          cache: false,
-          dataType: "json",
-          data: JSON.stringify(data),
-          headers: {"X-Auth-Token": "5c8b70988e784fca8186b93d38b1bae7"},
-          error: function (jqXHR) {
-                console.log("ajax error " + jqXHR.status);
-          }
- 
-       };
- 
-       return $.ajax(request);
-    }
-    
-    self.tasksURI = "https://api.football-data.org/v2/competitions/2002/standings";
-
-    self.ajax(self.tasksURI, 'GET').done(function(data) {
-        // console.log(data);
-
-        var ladder = data.standings[0].table;
-        console.log(ladder);
-
-        // Construct the Ladder
-        for (i = 0; i < ladder.length; i++) {
-            const element = ladder[i];
-            ladderItem(element, i+1);
-        }
-    })
-
-}
-
-function data() {
-   dataFixture();
-   dataLadder();
-}
-
 function dateTime(d) {
 
     var date = new Date(d);
@@ -580,6 +468,18 @@ function roundCalc(d) {
    } else if (year == "2018" && month == 11 && date <= 16){
       return 15;
 
+   // Gameday 16    
+   } else if (year == "2018" && month == 11 && date <= 19){
+      return 16;
+
+   // Gameday 17    
+   } else if (year == "2018" && month == 11 && date <= 23){
+      return 17;
+
+   // Gameday 18    
+   } else if (year == "2019" && month == 0 && date <= 20){
+      return 18;
+
    }
 }
 function teamAbrev(array){
@@ -717,6 +617,118 @@ function teamImg(team) {
     } else if (team == 'SV Werder Bremen') {
         return 'img/teams/Bremen/Logo.png';
     }
+}
+
+
+// Data - Fixture/Results
+
+function dataFixture() {
+
+    // Variables
+    var self = this;
+    var matchday = '';
+    self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
+    self.matchdayURI = "https://api.football-data.org/v2/competitions";
+
+    self.ajax = function(uri, method, data) {
+       var request = {
+          url: uri,
+          type: method,
+          accepts: "application/json",
+          cache: false,
+          dataType: "json",
+          data: JSON.stringify(data),
+          headers: {"X-Auth-Token": "5c8b70988e784fca8186b93d38b1bae7"},
+          error: function (jqXHR) {
+                console.log("ajax error " + jqXHR.status);
+          }
+ 
+       };
+ 
+       return $.ajax(request);
+    }
+
+    // // Matchday
+    // self.ajax(self.matchdayURI, 'GET').done(function(data){
+    //     var competition = data.competitions[63];
+
+    //     matchday = competition.currentSeason.currentMatchday;
+    // });
+
+    self.ajax(self.matchesURI, 'GET').done(function(data) {
+
+        var matches = data.matches;
+        var today = new Date;
+        var testDate = new Date('2018-04-24');
+        var currentRound = [];
+        var currentRoundNo = roundCalc(today);
+
+        $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
+
+        for (i = 0; i < matches.length; i++) {
+            const element = matches[i];
+            
+            if (element.matchday == currentRoundNo) {
+                currentRound.push(element);
+            }
+        }
+
+        console.log(data);
+
+        for (i = 0; i < currentRound.length; i++) {
+            const element = currentRound[i];
+
+            fixtureItem(element);
+        }
+    })
+}
+
+
+//
+// Data
+// ====
+function dataLadder() { 
+
+    var self = this;
+
+    self.ajax = function(uri, method, data) {
+       var request = {
+          url: uri,
+          type: method,
+          accepts: "application/json",
+          cache: false,
+          dataType: "json",
+          data: JSON.stringify(data),
+          headers: {"X-Auth-Token": "5c8b70988e784fca8186b93d38b1bae7"},
+          error: function (jqXHR) {
+                console.log("ajax error " + jqXHR.status);
+          }
+ 
+       };
+ 
+       return $.ajax(request);
+    }
+    
+    self.tasksURI = "https://api.football-data.org/v2/competitions/2002/standings";
+
+    self.ajax(self.tasksURI, 'GET').done(function(data) {
+        // console.log(data);
+
+        var ladder = data.standings[0].table;
+        console.log(ladder);
+
+        // Construct the Ladder
+        for (i = 0; i < ladder.length; i++) {
+            const element = ladder[i];
+            ladderItem(element, i+1);
+        }
+    })
+
+}
+
+function data() {
+   dataFixture();
+   dataLadder();
 }
 //
 // Layout - Vertically Centered
