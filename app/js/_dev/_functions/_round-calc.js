@@ -77,8 +77,16 @@ function roundCalc(d) {
       return 18;
 
    // Gameday 19
-   } else if (year == "2019" && month == 0 && date <= 28){
+   } else if (year == "2019" && month == 0 && date <= 27){
       return 19;
+
+   // Gameday 20
+   } else if (year == "2019" && month == 1 && date <= 3){
+      return 20;
+
+   // Gameday 21
+   } else if (year == "2019" && month == 1 && date <= 10){
+      return 21;
 
    }
 }
