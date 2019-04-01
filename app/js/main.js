@@ -213,13 +213,13 @@ function fixtureItem(array) {
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
@@ -238,13 +238,13 @@ function fixtureItem(array) {
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
@@ -263,13 +263,13 @@ function fixtureItem(array) {
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
                     '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].code + '</span>' +
+                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
                     '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
@@ -450,7 +450,7 @@ function kitImg(homename,awayname,location){
 
         // Hertha BSC - Black
         } else if (awayname == "Hertha BSC") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
+            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen") {
                 return 'img/teams/Hertha/Home.png';
             } else {
                 return 'img/teams/Hertha/Away.png';
@@ -458,7 +458,7 @@ function kitImg(homename,awayname,location){
 
         // RB Leipzig - Dark Blue (Black and Blue)
         } else if (awayname == "RB Leipzig") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen" || homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
+            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen" || homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
                 return 'img/teams/Leipzig/Home.png';
             } else {
                 return 'img/teams/Leipzig/Away.png';
@@ -466,7 +466,7 @@ function kitImg(homename,awayname,location){
 
         // SC Freiburg - Black
         } else if (awayname == "SC Freiburg") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
+            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen") {
                 return 'img/teams/Freiburg/Third.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
