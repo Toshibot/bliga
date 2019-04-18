@@ -8,7 +8,6 @@ var notify = require('gulp-notify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
@@ -18,9 +17,11 @@ var cleanCSS = require('gulp-clean-css');
 // ==========================================================================
 
 // Clean docs Folder
-gulp.task('clean:docs', function() {
+gulp.task('clean', function() {
     return del.sync('docs');
 });
+
+gulp.task('clean:dist', gulp.series('clean'));
 
 //
 // Browser Preview
@@ -69,9 +70,7 @@ gulp.task('css-plugins', function() {
 });
 
 // CSS Build Sequence - Compile Sass, then Minify CSS
-gulp.task('build-css', function(callback) {
-    runSequence('sass', 'minify-css', 'css-plugins', callback)
-});
+gulp.task('build-css', gulp.series('sass', 'minify-css', 'css-plugins'));
 
 
 //
@@ -82,30 +81,32 @@ gulp.task('build-css', function(callback) {
 // ======
 
 // Concatenate JS Files into one main.js file
-gulp.task('concat', function () {
-    return gulp.src(['app/js/_dev/**/*.js'])
+gulp.task('concat-main', function () {
+    return gulp.src(['app/js/_main_dev/**/*.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('app/js'));
 });
 
+gulp.task('concat', gulp.series('concat-main'));
+
 // Compress and migrate main.js file
-gulp.task('compress', function (callback) {
-    return gulp.src('app/js/*.js')
+gulp.task('compress', function () {
+    return gulp.src('app/js/main.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('docs/js'));
 });
 
 // Migrate JS Plugins
-gulp.task('js-plugins', function() {
-    return gulp.src('app/js/plugins/*.js')
-        .pipe(gulp.dest('docs/js/plugins'));
+gulp.task('js-plugins', function (done) {
+    gulp.src('app/js/plugins/*.js')
+        .pipe(gulp.dest('docs/js/plugins'))
+    done(); // <-- This is required to avoid async errors
 });
 
 // JS Build Sequence
-gulp.task('build-js', function(callback) {
-    runSequence('concat', 'compress', 'js-plugins', callback);
-});
+gulp.task('build-js', gulp.series('concat', 'compress', 'js-plugins'));
+
 
 //
 // Migrate HTML, Fonts, Images and Icons
@@ -142,29 +143,25 @@ gulp.task('data', function(){
 })
 
 // Migration Sequence
-gulp.task('migrate-assets', function(callback) {
-    runSequence('fonts', 'html', 'images', 'icons', 'data', callback);
-});
+gulp.task('migrate-assets', gulp.series('fonts', 'html', 'images', 'icons', 'data'));
 
 //
 // Main Build Sequence
 // ==========================================================================
 
-gulp.task('global-build-sequence', function(callback) {
-    runSequence('clean:docs', 'migrate-assets', 'build-js', 'build-css', 'browserSync', callback);
-});
+gulp.task('global-build-sequence', gulp.series('migrate-assets', 'build-js', 'build-css', 'browserSync'));
 
 //
 // Global Gulp Build and Watch Task
 // ==========================================================================
 
-gulp.task('default', ['global-build-sequence'], function() {
+gulp.task('default', gulp.series('global-build-sequence', function() {
     
     // Watch SCSS Files for Changes
     gulp.watch('app/scss/**/*.scss', ['build-css']);
 
     // Watch JS Files for Changes
-    gulp.watch('app/js/**/*.js', ['build-js']);
+    gulp.watch('app/js/**/*.{js,jsx}', ['build-js']);
 
     // Watch HTML, HTM and PHP files for Changes
     gulp.watch('app/*.{html,htm,php}', ['html']);
@@ -173,5 +170,5 @@ gulp.task('default', ['global-build-sequence'], function() {
     gulp.watch('docs/css/*.css', browserSync.reload);
     gulp.watch('docs/*.{html,htm,php}', browserSync.reload); 
     gulp.watch('docs/js/**/*.js', browserSync.reload); 
-});
+}));
 
