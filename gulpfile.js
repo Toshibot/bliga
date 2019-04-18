@@ -81,13 +81,11 @@ gulp.task('build-css', gulp.series('sass', 'minify-css', 'css-plugins'));
 // ======
 
 // Concatenate JS Files into one main.js file
-gulp.task('concat-main', function () {
+gulp.task('concat', function () {
     return gulp.src(['app/js/_main_dev/**/*.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('app/js'));
 });
-
-gulp.task('concat', gulp.series('concat-main'));
 
 // Compress and migrate main.js file
 gulp.task('compress', function () {
@@ -161,7 +159,7 @@ gulp.task('default', gulp.series('global-build-sequence', function() {
     gulp.watch('app/scss/**/*.scss', ['build-css']);
 
     // Watch JS Files for Changes
-    gulp.watch('app/js/**/*.{js,jsx}', ['build-js']);
+    gulp.watch('app/js/**/*.js', ['build-js']);
 
     // Watch HTML, HTM and PHP files for Changes
     gulp.watch('app/*.{html,htm,php}', ['html']);
