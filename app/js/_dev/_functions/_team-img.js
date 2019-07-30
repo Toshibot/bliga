@@ -37,5 +37,11 @@ function teamImg(team) {
         return 'img/teams/Wolfsburg/Logo.png';
     } else if (team == 'SV Werder Bremen') {
         return 'img/teams/Bremen/Logo.png';
+    } else if (team == 'SC Paderborn 07') {
+        return 'img/teams/Paderborn/Logo.png';
+    } else if (team == '1. FC Köln') {
+        return 'img/teams/Koeln/Logo.png';
+    } else if (team == '1. FC Union Berlin') {
+        return 'img/teams/Union/Logo.png';
     }
 }

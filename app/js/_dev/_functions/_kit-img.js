@@ -54,6 +54,15 @@ function kitImg(homename,awayname,location){
 
         } else if (homename == 'SV Werder Bremen') {
             return 'img/teams/Bremen/Home.png';
+        
+        } else if (homename == 'SC Paderborn 07') {
+            return 'img/teams/Paderborn/Home.png';
+        
+        } else if (homename == '1. FC Köln') {
+            return 'img/teams/Koeln/Home.png';
+        
+        } else if (homename == '1. FC Union Berlin') {
+            return 'img/teams/Union/Home.png';
         }
 
     // Away Team Kit Switching
@@ -198,6 +207,30 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Bremen/Third.png';
             } else {
                 return 'img/teams/Bremen/Away.png';
+            }
+        
+        // SC Paderborn - White
+        } else if (awayname == 'SC Paderborn 07') {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+                return 'img/teams/Paderborn/Third.png';
+            } else {
+                return 'img/teams/Paderborn/Away.png';
+            }
+        
+        // FC Köln - Red
+        } else if (awayname == '1. FC Köln') {
+            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
+                return 'img/teams/Koeln/Third.png';
+            } else {
+                return 'img/teams/Koeln/Away.png';
+            }
+        
+        // FC Union Berlin - White
+        } else if (awayname == '1. FC Union Berlin') {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+                return 'img/teams/Union/Third.png';
+            } else {
+                return 'img/teams/Union/Away.png';
             }
         }
     }

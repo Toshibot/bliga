@@ -91,5 +91,20 @@ function teamAbrev(array){
             code: 'RBL',
             name: 'Leipzig'
         }];
-    } 
+    } else if (team == "SC Paderborn 07") {
+        return [{
+            code: 'PAD',
+            name: 'Paderborn'
+        }];
+    } else if (team == "1. FC Köln") {
+        return [{
+            code: 'KLN',
+            name: 'Köln'
+        }];
+    } else if (team == "1. FC Union Berlin") {
+        return [{
+            code: 'UNB',
+            name: 'Union'
+        }];
+    }
 }
