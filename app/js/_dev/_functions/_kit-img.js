@@ -181,7 +181,7 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Freiburg/Away.png';
             }
 
-        // TSG 1899 Hoffenheim - White
+        // TSG 1899 Hoffenheim - Light Green
         } else if (awayname == "TSG 1899 Hoffenheim") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
                 return 'img/teams/Hoffenheim/Third.png';
@@ -205,10 +205,10 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Wolfsburg/Away.png';
             }
 
-        // Werder Bremen - Black
+        // Werder Bremen - White
         } else if (awayname == "SV Werder Bremen") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
-                return 'img/teams/Bremen/Third.png';
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+                return 'img/teams/Bremen/Home.png';
             } else {
                 return 'img/teams/Bremen/Away.png';
             }
