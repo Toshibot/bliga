@@ -101,9 +101,9 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Dortmund/Away.png';
             }
 
-        // Borussia Mönchengladbach - Black
+        // Borussia Mönchengladbach - Blue
         } else if (awayname == 'Borussia Mönchengladbach') {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
+            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
                 return 'img/teams/Gladbach/Home.png';
             } else {
                 return 'img/teams/Gladbach/Away.png';

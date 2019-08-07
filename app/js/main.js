@@ -405,9 +405,9 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Dortmund/Away.png';
             }
 
-        // Borussia Mönchengladbach - Black
+        // Borussia Mönchengladbach - Blue
         } else if (awayname == 'Borussia Mönchengladbach') {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
+            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
                 return 'img/teams/Gladbach/Home.png';
             } else {
                 return 'img/teams/Gladbach/Away.png';
@@ -826,6 +826,18 @@ function teamImg(team) {
         return 'img/teams/Union/Logo.png';
     }
 }
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
+
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -878,15 +890,3 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
-
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
