@@ -421,9 +421,9 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Frankfurt/Away.png';
             }
 
-        // FC Augsburg - Green
+        // FC Augsburg - Black
         } else if (awayname == "FC Augsburg") {
-            if (homename == "SV Werder Bremen" || homename == "VfL Wolfsburg") {
+            if (homename == "Eintracht Frankfurt") {
                 return 'img/teams/Augsburg/Third.png';
             } else {
                 return 'img/teams/Augsburg/Away.png';
@@ -501,9 +501,9 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Stuttgart/Away.png';
             }
 
-        // VfL Wolfsburg - White
+        // VfL Wolfsburg - Light Blue
         } else if (awayname == "VfL Wolfsburg") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
                 return 'img/teams/Wolfsburg/Third.png';
             } else {
                 return 'img/teams/Wolfsburg/Away.png';
