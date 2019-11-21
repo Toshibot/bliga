@@ -71,7 +71,7 @@ function kitImg(homename,awayname,location){
 
         // 1. FC Nürnberg - White
         if (awayname == "1. FC Nürnberg") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Nuernberg/Home.png';
             } else {
                 return 'img/teams/Nuernberg/Away.png';
@@ -87,7 +87,7 @@ function kitImg(homename,awayname,location){
 
         // Bayer Leverkusen - White
         } else if (awayname == "Bayer 04 Leverkusen") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Leverkusen/Third.png';
             } else {
                 return 'img/teams/Leverkusen/Away.png';
@@ -111,7 +111,7 @@ function kitImg(homename,awayname,location){
 
         // Eintracht Frankfurt - White
         } else if (awayname == "Eintracht Frankfurt") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Frankfurt/Third.png';
             } else {
                 return 'img/teams/Frankfurt/Away.png';
@@ -127,7 +127,7 @@ function kitImg(homename,awayname,location){
 
         // FC Bayern - White
         } else if (awayname == "FC Bayern München") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Bayern/Home.png';
             } else {
                 return 'img/teams/Bayern/Away.png';
@@ -135,7 +135,7 @@ function kitImg(homename,awayname,location){
 
         // FC Schalke 04 - White
         } else if (awayname == "FC Schalke 04") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Schalke/Home.png';
             } else {
                 return 'img/teams/Schalke/Away.png';
@@ -173,9 +173,9 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Leipzig/Away.png';
             }
 
-        // SC Freiburg - Black
+        // SC Freiburg - White
         } else if (awayname == "SC Freiburg") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Freiburg/Third.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
@@ -207,7 +207,7 @@ function kitImg(homename,awayname,location){
 
         // Werder Bremen - White
         } else if (awayname == "SV Werder Bremen") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Bremen/Home.png';
             } else {
                 return 'img/teams/Bremen/Away.png';
@@ -215,7 +215,7 @@ function kitImg(homename,awayname,location){
         
         // SC Paderborn - White
         } else if (awayname == 'SC Paderborn 07') {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Paderborn/Third.png';
             } else {
                 return 'img/teams/Paderborn/Away.png';
