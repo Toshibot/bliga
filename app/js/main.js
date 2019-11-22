@@ -122,6 +122,71 @@ function data() {
    dataFixture();
    dataLadder();
 }
+//
+// Layout - Vertically Centered
+// ==========================================================================
+
+// ***
+// This function vertically centers an object element within 
+// its parent element by calculating the height of the parent,
+// the height of the child and adding padding to the top and 
+// bottom of the child element.
+//
+// Parent Element
+// --------------
+// The parent element must be a jQuery object.
+// eg: $('.o-vert-center')
+//
+// Child Element
+// -------------
+// The child element must be a direct child of the parent and
+// be passed through the function with only its classname.
+// eg: '.o-vert-center__object'
+// *
+
+function vertCenter(element, child) {
+
+    var parentHeight = element.parent().height();
+    // This will give the element the same height
+    // and line-height as it's parent container.
+    element.css({
+        'height': parentHeight + 'px',
+        'line-height': parentHeight + 'px'
+    });
+    
+    element.children(child).css({
+        'height': element.children(child).height(),
+        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
+        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
+    });
+}
+
+function clearStyles(element, child) {
+    element.attr('style', '');
+    child.attr('style', '');
+}
+
+// Function applied to the following parent/child classes:
+// vertCenter($('.o-vert-center'), '.o-vert-center__object');
+
+// On window resize clear previous styles then re-run the function.
+$(window).on('resize', function() {
+    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
+    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
+});
+
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
+
 
 function dateTime(d) {
 
@@ -381,15 +446,15 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Nuernberg/Away.png';
             }
 
-        // 1. FSV Mainz 05 - Blue
+        // 1. FSV Mainz 05 - White
         } else if (awayname == "1. FSV Mainz 05") {
-            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
+            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Mainz/Third.png';
             } else {
                 return 'img/teams/Mainz/Away.png';
             }
 
-        // Bayer Leverkusen - White
+        // Bayer Leverkusen - Black
         } else if (awayname == "Bayer 04 Leverkusen") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Leverkusen/Third.png';
@@ -399,7 +464,7 @@ function kitImg(homename,awayname,location){
 
         // Borussia Dortmund - Black
         } else if (awayname == "BV Borussia 09 Dortmund") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen"){
+            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07"){
                 return 'img/teams/Dortmund/Home.png';
             } else {
                 return 'img/teams/Dortmund/Away.png';
@@ -423,7 +488,7 @@ function kitImg(homename,awayname,location){
 
         // FC Augsburg - Black
         } else if (awayname == "FC Augsburg") {
-            if (homename == "Eintracht Frankfurt") {
+            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07") {
                 return 'img/teams/Augsburg/Third.png';
             } else {
                 return 'img/teams/Augsburg/Away.png';
@@ -455,7 +520,7 @@ function kitImg(homename,awayname,location){
 
         // Hannover 96 - Black
         } else if (awayname == "Hannover 96") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer Leverkusen") {
+            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07") {
                 return 'img/teams/Hannover/Third.png';
             } else {
                 return 'img/teams/Hannover/Away.png';
@@ -471,7 +536,7 @@ function kitImg(homename,awayname,location){
 
         // RB Leipzig - Dark Blue (Black and Blue)
         } else if (awayname == "RB Leipzig") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen" || homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
+            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07" || homename == "Bayer 04 Leverkusen" || homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
                 return 'img/teams/Leipzig/Home.png';
             } else {
                 return 'img/teams/Leipzig/Away.png';
@@ -826,67 +891,3 @@ function teamImg(team) {
         return 'img/teams/Union/Logo.png';
     }
 }
-//
-// Layout - Vertically Centered
-// ==========================================================================
-
-// ***
-// This function vertically centers an object element within 
-// its parent element by calculating the height of the parent,
-// the height of the child and adding padding to the top and 
-// bottom of the child element.
-//
-// Parent Element
-// --------------
-// The parent element must be a jQuery object.
-// eg: $('.o-vert-center')
-//
-// Child Element
-// -------------
-// The child element must be a direct child of the parent and
-// be passed through the function with only its classname.
-// eg: '.o-vert-center__object'
-// *
-
-function vertCenter(element, child) {
-
-    var parentHeight = element.parent().height();
-    // This will give the element the same height
-    // and line-height as it's parent container.
-    element.css({
-        'height': parentHeight + 'px',
-        'line-height': parentHeight + 'px'
-    });
-    
-    element.children(child).css({
-        'height': element.children(child).height(),
-        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
-        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
-    });
-}
-
-function clearStyles(element, child) {
-    element.attr('style', '');
-    child.attr('style', '');
-}
-
-// Function applied to the following parent/child classes:
-// vertCenter($('.o-vert-center'), '.o-vert-center__object');
-
-// On window resize clear previous styles then re-run the function.
-$(window).on('resize', function() {
-    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
-    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
-});
-
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
