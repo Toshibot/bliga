@@ -176,7 +176,7 @@ function kitImg(homename,awayname,location){
         // SC Freiburg - White
         } else if (awayname == "SC Freiburg") {
             if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Freiburg/Third.png';
+                return 'img/teams/Freiburg/HomeAlt.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
             }
