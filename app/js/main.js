@@ -447,7 +447,7 @@ function kitImg(homename,awayname,location){
 
         // Fortuna Düsseldorf - Red
         } else if (awayname == "TSV Fortuna 95 Düsseldorf") {
-            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
+            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
                 return 'img/teams/Duesseldorf/Third.png';
             } else {
                 return 'img/teams/Duesseldorf/Away.png';
@@ -463,7 +463,7 @@ function kitImg(homename,awayname,location){
 
         // Hertha BSC - Red & Black
         } else if (awayname == "Hertha BSC") {
-            if (homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
+            if (homename == "Bayer 04 Leverkusen" || homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
                 return 'img/teams/Hertha/Home.png';
             } else {
                 return 'img/teams/Hertha/Away.png';
@@ -495,7 +495,7 @@ function kitImg(homename,awayname,location){
 
         // VfB Stuttgart - Red
         } else if (awayname == "VfB Stuttgart") {
-            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
+            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
                 return 'img/teams/Stuttgart/Third.png';
             } else {
                 return 'img/teams/Stuttgart/Away.png';
@@ -527,7 +527,7 @@ function kitImg(homename,awayname,location){
         
         // FC Köln - Red
         } else if (awayname == '1. FC Köln') {
-            if (homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin"){
+            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin"){
                 return 'img/teams/Koeln/Third.png';
             } else {
                 return 'img/teams/Koeln/Away.png';
@@ -826,6 +826,18 @@ function teamImg(team) {
         return 'img/teams/Union/Logo.png';
     }
 }
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
+
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -878,15 +890,3 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
-
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
