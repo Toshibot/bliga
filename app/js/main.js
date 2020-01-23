@@ -487,7 +487,7 @@ function kitImg(homename,awayname,location){
 
         // TSG 1899 Hoffenheim - Light Green
         } else if (awayname == "TSG 1899 Hoffenheim") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfL Wolfsburg" || homename == "SV Werder Bremen" || homename == "FC Augsburg" || homename == "Borussia Mönchengladbach") {
                 return 'img/teams/Hoffenheim/Third.png';
             } else {
                 return 'img/teams/Hoffenheim/Away.png';
@@ -826,18 +826,6 @@ function teamImg(team) {
         return 'img/teams/Union/Logo.png';
     }
 }
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
-
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -890,3 +878,15 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
+
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });

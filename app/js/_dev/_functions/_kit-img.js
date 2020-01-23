@@ -183,7 +183,7 @@ function kitImg(homename,awayname,location){
 
         // TSG 1899 Hoffenheim - Light Green
         } else if (awayname == "TSG 1899 Hoffenheim") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename == "VfL Wolfsburg" || homename == "SV Werder Bremen" || homename == "FC Augsburg" || homename == "Borussia Mönchengladbach") {
                 return 'img/teams/Hoffenheim/Third.png';
             } else {
                 return 'img/teams/Hoffenheim/Away.png';
