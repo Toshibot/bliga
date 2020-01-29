@@ -71,7 +71,7 @@ function kitImg(homename,awayname,location){
 
         // 1. FC Nürnberg - White
         if (awayname == "1. FC Nürnberg") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Nuernberg/Home.png';
             } else {
                 return 'img/teams/Nuernberg/Away.png';
@@ -79,7 +79,7 @@ function kitImg(homename,awayname,location){
 
         // 1. FSV Mainz 05 - White
         } else if (awayname == "1. FSV Mainz 05") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Mainz/Third.png';
             } else {
                 return 'img/teams/Mainz/Away.png';
@@ -111,7 +111,7 @@ function kitImg(homename,awayname,location){
 
         // Eintracht Frankfurt - White
         } else if (awayname == "Eintracht Frankfurt") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Frankfurt/Third.png';
             } else {
                 return 'img/teams/Frankfurt/Away.png';
@@ -127,7 +127,7 @@ function kitImg(homename,awayname,location){
 
         // FC Bayern - White
         } else if (awayname == "FC Bayern München") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Bayern/Home.png';
             } else {
                 return 'img/teams/Bayern/Away.png';
@@ -135,7 +135,7 @@ function kitImg(homename,awayname,location){
 
         // FC Schalke 04 - White
         } else if (awayname == "FC Schalke 04") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Schalke/Home.png';
             } else {
                 return 'img/teams/Schalke/Away.png';
@@ -175,7 +175,7 @@ function kitImg(homename,awayname,location){
 
         // SC Freiburg - White
         } else if (awayname == "SC Freiburg") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Freiburg/HomeAlt.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
@@ -207,7 +207,7 @@ function kitImg(homename,awayname,location){
 
         // Werder Bremen - White
         } else if (awayname == "SV Werder Bremen") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Bremen/Home.png';
             } else {
                 return 'img/teams/Bremen/Away.png';
@@ -215,7 +215,7 @@ function kitImg(homename,awayname,location){
         
         // SC Paderborn - White
         } else if (awayname == 'SC Paderborn 07') {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
                 return 'img/teams/Paderborn/Third.png';
             } else {
                 return 'img/teams/Paderborn/Away.png';
@@ -231,7 +231,7 @@ function kitImg(homename,awayname,location){
         
         // FC Union Berlin - White
         } else if (awayname == '1. FC Union Berlin') {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
                 return 'img/teams/Union/Third.png';
             } else {
                 return 'img/teams/Union/Away.png';
