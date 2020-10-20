@@ -63,6 +63,9 @@ function kitImg(homename,awayname,location){
         
         } else if (homename == '1. FC Union Berlin') {
             return 'img/teams/Union/Home.png';
+        
+        } else if (homename == 'DSC Arminia Bielefeld') {
+            return 'img/teams/Bielefeld/Home.png';
         }
 
     // Away Team Kit Switching
@@ -235,6 +238,14 @@ function kitImg(homename,awayname,location){
                 return 'img/teams/Union/Third.png';
             } else {
                 return 'img/teams/Union/Away.png';
+            }
+        
+        // DSC Arminia Bielefeld - White
+        } else if (awayname == 'DSC Arminia Bielefeld') {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
+                return 'img/teams/Bielefeld/Home.png';
+            } else {
+                return 'img/teams/Bielefeld/Away.png';
             }
         }
     }

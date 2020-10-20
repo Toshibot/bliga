@@ -106,5 +106,10 @@ function teamAbrev(array){
             code: 'UNB',
             name: 'Union'
         }];
+    } else if (team == "DSC Arminia Bielefeld") {
+        return [{
+            code: 'ARB',
+            name: 'Bielefeld'
+        }];
     }
 }

@@ -43,5 +43,7 @@ function teamImg(team) {
         return 'img/teams/Koeln/Logo.png';
     } else if (team == '1. FC Union Berlin') {
         return 'img/teams/Union/Logo.png';
+    } else if (team == 'DSC Arminia Bielefeld') {
+        return 'img/teams/Bielefeld/Logo.png';
     }
 }
