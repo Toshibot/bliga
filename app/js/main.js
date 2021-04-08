@@ -482,7 +482,7 @@ function kitImg(homename,awayname,location){
 
         // SC Freiburg - White
         } else if (awayname == "SC Freiburg") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
+            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "Arminia Bielefeld") {
                 return 'img/teams/Freiburg/HomeAlt.png';
             } else {
                 return 'img/teams/Freiburg/Away.png';
@@ -844,18 +844,6 @@ function teamImg(team) {
         return 'img/teams/Bielefeld/Logo.png';
     }
 }
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });
-
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -908,3 +896,15 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
+
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
