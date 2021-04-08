@@ -314,7 +314,7 @@ function kitImg(homename,awayname,location){
         } else if (homename == 'Bayer 04 Leverkusen') {
             return 'img/teams/Leverkusen/Home.png';
 
-        } else if (homename == 'BV Borussia 09 Dortmund') {
+        } else if (homename == 'Borussia Dortmund') {
             return 'img/teams/Dortmund/Home.png';
 
         } else if (homename == 'Borussia Mönchengladbach') {
@@ -368,7 +368,7 @@ function kitImg(homename,awayname,location){
         } else if (homename == '1. FC Union Berlin') {
             return 'img/teams/Union/Home.png';
         
-        } else if (homename == 'DSC Arminia Bielefeld') {
+        } else if (homename == 'Arminia Bielefeld') {
             return 'img/teams/Bielefeld/Home.png';
         }
 
@@ -401,7 +401,7 @@ function kitImg(homename,awayname,location){
             }
 
         // Borussia Dortmund - Black
-        } else if (awayname == "BV Borussia 09 Dortmund") {
+        } else if (awayname == "Borussia Dortmund") {
             if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07"){
                 return 'img/teams/Dortmund/Home.png';
             } else {
@@ -545,7 +545,7 @@ function kitImg(homename,awayname,location){
             }
         
         // DSC Arminia Bielefeld - White
-        } else if (awayname == 'DSC Arminia Bielefeld') {
+        } else if (awayname == 'Arminia Bielefeld') {
             if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
                 return 'img/teams/Bielefeld/Home.png';
             } else {
@@ -688,7 +688,7 @@ function teamAbrev(array){
             code: 'SGE',
             name: 'Frankfurt'
         }];
-    } else if (team == 'BV Borussia 09 Dortmund') {
+    } else if (team == 'Borussia Dortmund') {
         return [{
             code: 'BVB',
             name: 'Dortmund'
@@ -788,7 +788,7 @@ function teamAbrev(array){
             code: 'UNB',
             name: 'Union'
         }];
-    } else if (team == "DSC Arminia Bielefeld") {
+    } else if (team == "Arminia Bielefeld") {
         return [{
             code: 'ARB',
             name: 'Bielefeld'
@@ -804,7 +804,7 @@ function teamImg(team) {
         return 'img/teams/Mainz/Logo.png';
     } else if (team == 'Bayer 04 Leverkusen') {
         return 'img/teams/Leverkusen/Logo.png';
-    } else if (team == 'BV Borussia 09 Dortmund') {
+    } else if (team == 'Borussia Dortmund') {
         return 'img/teams/Dortmund/Logo.png';
     } else if (team == 'Borussia Mönchengladbach') {
         return 'img/teams/Gladbach/Logo.png';
@@ -840,10 +840,22 @@ function teamImg(team) {
         return 'img/teams/Koeln/Logo.png';
     } else if (team == '1. FC Union Berlin') {
         return 'img/teams/Union/Logo.png';
-    } else if (team == 'DSC Arminia Bielefeld') {
+    } else if (team == 'Arminia Bielefeld') {
         return 'img/teams/Bielefeld/Logo.png';
     }
 }
+
+//
+// UI - Buttons
+// ==========================================================================
+
+// Variables
+// var gitButton = document.getElementById('js-button-github');
+
+// gitButton.addEventListener('click', function(){
+//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
+// });
+
 //
 // Layout - Vertically Centered
 // ==========================================================================
@@ -896,15 +908,3 @@ $(window).on('resize', function() {
     // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
     // vertCenter($('.o-vert-center'), '.o-vert-center__object');
 });
-
-
-//
-// UI - Buttons
-// ==========================================================================
-
-// Variables
-// var gitButton = document.getElementById('js-button-github');
-
-// gitButton.addEventListener('click', function(){
-//     window.open('https://github.com/Toshibot/webapp-boilerplate', '_blank');
-// });

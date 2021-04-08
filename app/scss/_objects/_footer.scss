@@ -4,6 +4,8 @@
     background: $color-black-dark;
     color: $color-white;
     padding-top: $size-base;
+    z-index: 99;
+    position: relative;
 
     @media only screen and (max-width: $break-s) {
         height: auto;

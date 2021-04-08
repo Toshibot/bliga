@@ -6,7 +6,7 @@ function teamAbrev(array){
             code: 'SGE',
             name: 'Frankfurt'
         }];
-    } else if (team == 'BV Borussia 09 Dortmund') {
+    } else if (team == 'Borussia Dortmund') {
         return [{
             code: 'BVB',
             name: 'Dortmund'
@@ -106,7 +106,7 @@ function teamAbrev(array){
             code: 'UNB',
             name: 'Union'
         }];
-    } else if (team == "DSC Arminia Bielefeld") {
+    } else if (team == "Arminia Bielefeld") {
         return [{
             code: 'ARB',
             name: 'Bielefeld'

@@ -7,7 +7,7 @@ function teamImg(team) {
         return 'img/teams/Mainz/Logo.png';
     } else if (team == 'Bayer 04 Leverkusen') {
         return 'img/teams/Leverkusen/Logo.png';
-    } else if (team == 'BV Borussia 09 Dortmund') {
+    } else if (team == 'Borussia Dortmund') {
         return 'img/teams/Dortmund/Logo.png';
     } else if (team == 'Borussia Mönchengladbach') {
         return 'img/teams/Gladbach/Logo.png';
@@ -43,7 +43,7 @@ function teamImg(team) {
         return 'img/teams/Koeln/Logo.png';
     } else if (team == '1. FC Union Berlin') {
         return 'img/teams/Union/Logo.png';
-    } else if (team == 'DSC Arminia Bielefeld') {
+    } else if (team == 'Arminia Bielefeld') {
         return 'img/teams/Bielefeld/Logo.png';
     }
 }

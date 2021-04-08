@@ -10,7 +10,7 @@ function kitImg(homename,awayname,location){
         } else if (homename == 'Bayer 04 Leverkusen') {
             return 'img/teams/Leverkusen/Home.png';
 
-        } else if (homename == 'BV Borussia 09 Dortmund') {
+        } else if (homename == 'Borussia Dortmund') {
             return 'img/teams/Dortmund/Home.png';
 
         } else if (homename == 'Borussia Mönchengladbach') {
@@ -64,7 +64,7 @@ function kitImg(homename,awayname,location){
         } else if (homename == '1. FC Union Berlin') {
             return 'img/teams/Union/Home.png';
         
-        } else if (homename == 'DSC Arminia Bielefeld') {
+        } else if (homename == 'Arminia Bielefeld') {
             return 'img/teams/Bielefeld/Home.png';
         }
 
@@ -97,7 +97,7 @@ function kitImg(homename,awayname,location){
             }
 
         // Borussia Dortmund - Black
-        } else if (awayname == "BV Borussia 09 Dortmund") {
+        } else if (awayname == "Borussia Dortmund") {
             if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07"){
                 return 'img/teams/Dortmund/Home.png';
             } else {
@@ -241,7 +241,7 @@ function kitImg(homename,awayname,location){
             }
         
         // DSC Arminia Bielefeld - White
-        } else if (awayname == 'DSC Arminia Bielefeld') {
+        } else if (awayname == 'Arminia Bielefeld') {
             if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
                 return 'img/teams/Bielefeld/Home.png';
             } else {
