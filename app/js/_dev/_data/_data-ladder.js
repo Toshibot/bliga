@@ -2,7 +2,7 @@
 //
 // Data
 // ====
-function dataLadder() { 
+function dataLadder(data_teams) { 
 
     var self = this;
 
@@ -34,8 +34,8 @@ function dataLadder() {
 
         // Construct the Ladder
         for (i = 0; i < ladder.length; i++) {
-            const element = ladder[i];
-            ladderItem(element, i+1);
+            const ladder_item = ladder[i];
+            ladderItem(ladder_item, i+1, data_teams);
         }
     })
 

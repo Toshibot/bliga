@@ -8,7 +8,7 @@ data();
 
 // Data - Fixture/Results
 
-function dataFixture() {
+function dataFixture(data_teams) {
 
     // Variables
     var self = this;
@@ -68,9 +68,9 @@ function dataFixture() {
         console.log(data);
 
         for (i = 0; i < currentRound.length; i++) {
-            const element = currentRound[i];
+            const match = currentRound[i];
 
-            fixtureItem(element);
+            fixtureItem(match, data_teams);
         }
     })
 }
@@ -79,7 +79,7 @@ function dataFixture() {
 //
 // Data
 // ====
-function dataLadder() { 
+function dataLadder(data_teams) { 
 
     var self = this;
 
@@ -111,17 +111,72 @@ function dataLadder() {
 
         // Construct the Ladder
         for (i = 0; i < ladder.length; i++) {
-            const element = ladder[i];
-            ladderItem(element, i+1);
+            const ladder_item = ladder[i];
+            ladderItem(ladder_item, i+1, data_teams);
         }
     })
 
 }
 
 function data() {
-   dataFixture();
-   dataLadder();
+   $.getJSON('data/data-teams.json', function(data_teams){
+      dataFixture(data_teams);
+      dataLadder(data_teams);
+   })
 }
+//
+// Layout - Vertically Centered
+// ==========================================================================
+
+// ***
+// This function vertically centers an object element within 
+// its parent element by calculating the height of the parent,
+// the height of the child and adding padding to the top and 
+// bottom of the child element.
+//
+// Parent Element
+// --------------
+// The parent element must be a jQuery object.
+// eg: $('.o-vert-center')
+//
+// Child Element
+// -------------
+// The child element must be a direct child of the parent and
+// be passed through the function with only its classname.
+// eg: '.o-vert-center__object'
+// *
+
+function vertCenter(element, child) {
+
+    var parentHeight = element.parent().height();
+    // This will give the element the same height
+    // and line-height as it's parent container.
+    element.css({
+        'height': parentHeight + 'px',
+        'line-height': parentHeight + 'px'
+    });
+    
+    element.children(child).css({
+        'height': element.children(child).height(),
+        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
+        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
+    });
+}
+
+function clearStyles(element, child) {
+    element.attr('style', '');
+    child.attr('style', '');
+}
+
+// Function applied to the following parent/child classes:
+// vertCenter($('.o-vert-center'), '.o-vert-center__object');
+
+// On window resize clear previous styles then re-run the function.
+$(window).on('resize', function() {
+    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
+    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
+});
+
 
 function dateTime(d) {
 
@@ -196,10 +251,14 @@ function dateTime(d) {
     return dateObj;
 }
 
-function fixtureItem(array) {
+function fixtureItem(match, data_teams) {
 
-    var date = dateTime(array.utcDate);
-    var match_status = array.status;
+    var date = dateTime(match.utcDate);
+    var match_status = match.status;
+    var home_team = match.homeTeam;
+    var away_team = match.awayTeam;
+    var home_team_data = data_teams[home_team.id];
+    var away_team_data = data_teams[away_team.id];
 
     if (match_status == "IN_PLAY") {
 
@@ -212,15 +271,15 @@ function fixtureItem(array) {
                     '<span class="c-date__time">LIVE</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
+                    '<img class="js-team-img" src="' + home_team_data.kits.home.file + '" />' +
+                    '<span class="js-team-text">' + home_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
+                    '<img class="js-team-img" src="' + awayKit(away_team_data, home_team_data.kits.home) + '" />' +
+                    '<span class="js-team-text">' + away_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
             '</div>'
@@ -237,15 +296,15 @@ function fixtureItem(array) {
                     '<span class="c-date__time">HT</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
+                    '<img class="js-team-img" src="' + home_team_data.kits.home.file + '" />' +
+                    '<span class="js-team-text">' + home_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
+                    '<img class="js-team-img" src="' + awayKit(away_team_data, home_team_data.kits.home) + '" />' +
+                    '<span class="js-team-text">' + away_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
             '</div>'
@@ -262,15 +321,15 @@ function fixtureItem(array) {
                     '<span class="c-date__time">FT</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.homeTeam + '</span>' +
+                    '<img class="js-team-img" src="' + home_team_data.kits.home.file + '" />' +
+                    '<span class="js-team-text">' + home_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.homeTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
-                    '<span class="c-fixture__score js-score-text">' + array.score.fullTime.awayTeam + '</span>' +
+                    '<img class="js-team-img" src="' + awayKit(away_team_data, home_team_data.kits.home) + '" />' +
+                    '<span class="js-team-text">' + away_team_data.name + '</span>' +
+                    '<span class="c-fixture__score js-score-text">' + match.score.fullTime.awayTeam + '</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
             '</div>'
@@ -287,14 +346,14 @@ function fixtureItem(array) {
                     '<span class="c-date__time">' + date.time + '</span>' +
                 '</div >' +
                 '<div class="c-fixture__team js-fixture-team-1">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Home") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.homeTeam.name)[0].name + '</span>' +
+                    '<img class="js-team-img" src="' + home_team_data.kits.home.file + '" />' +
+                    '<span class="js-team-text">' + home_team_data.name + '</span>' +
                     '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +
                 '<div class="c-fixture__vs">vs</div>' +
                 '<div class="c-fixture__team js-fixture-team-2">' +
-                    '<img class="js-team-img" src="' + kitImg(array.homeTeam.name, array.awayTeam.name, "Away") + '" />' +
-                    '<span class="js-team-text">' + teamAbrev(array.awayTeam.name)[0].name + '</span>' +
+                    '<img class="js-team-img" src="' + awayKit(away_team_data, home_team_data.kits.home) + '" />' +
+                    '<span class="js-team-text">' + away_team_data.name + '</span>' +
                     '<span class="c-fixture__score js-score-text">-</span>' +
                 '</div>' +
                 '<div class="c-fixture__venue js-fixture-venue">' + '</div>' +
@@ -302,271 +361,30 @@ function fixtureItem(array) {
         );
     }
 }
-function kitImg(homename,awayname,location){
-    
-    if (location == "Home") {
-        if (homename == '1. FC Nürnberg') {
-            return 'img/teams/Nuernberg/Home.png';
+function awayKit(away_team_data, home_team_kit){
+    var away_team_kit = away_team_data.kits.away;
+    var away_kit = away_team_kit.file;
+    var third_kit = away_team_data.kits.third.file;
 
-        } else if (homename == '1. FSV Mainz 05') {
-            return 'img/teams/Mainz/Home.png';
-
-        } else if (homename == 'Bayer 04 Leverkusen') {
-            return 'img/teams/Leverkusen/Home.png';
-
-        } else if (homename == 'Borussia Dortmund') {
-            return 'img/teams/Dortmund/Home.png';
-
-        } else if (homename == 'Borussia Mönchengladbach') {
-            return 'img/teams/Gladbach/Home.png';
-
-        } else if (homename == 'Eintracht Frankfurt') {
-            return 'img/teams/Frankfurt/Home.png';
-
-        } else if (homename == 'FC Augsburg') {
-            return 'img/teams/Augsburg/Home.png';
-
-        } else if (homename == 'FC Bayern München') {
-            return 'img/teams/Bayern/Home.png';
-
-        } else if (homename == 'FC Schalke 04') {
-            return 'img/teams/Schalke/Home.png';
-
-        } else if (homename == 'TSV Fortuna 95 Düsseldorf') {
-            return 'img/teams/Duesseldorf/Home.png';
-
-        } else if (homename == 'Hannover 96') {
-            return 'img/teams/Hannover/Home.png';
-
-        } else if (homename == 'Hertha BSC') {
-            return 'img/teams/Hertha/Home.png';
-
-        } else if (homename == 'RB Leipzig') {
-            return 'img/teams/Leipzig/Home.png';
-
-        } else if (homename == 'SC Freiburg') {
-            return 'img/teams/Freiburg/Home.png';
-
-        } else if (homename == 'TSG 1899 Hoffenheim') {
-            return 'img/teams/Hoffenheim/Home.png';
-
-        } else if (homename == 'VfB Stuttgart') {
-            return 'img/teams/Stuttgart/Home.png';
-
-        } else if (homename == 'VfL Wolfsburg') {
-            return 'img/teams/Wolfsburg/Home.png';
-
-        } else if (homename == 'SV Werder Bremen') {
-            return 'img/teams/Bremen/Home.png';
-        
-        } else if (homename == 'SC Paderborn 07') {
-            return 'img/teams/Paderborn/Home.png';
-        
-        } else if (homename == '1. FC Köln') {
-            return 'img/teams/Koeln/Home.png';
-        
-        } else if (homename == '1. FC Union Berlin') {
-            return 'img/teams/Union/Home.png';
-        
-        } else if (homename == 'Arminia Bielefeld') {
-            return 'img/teams/Bielefeld/Home.png';
-        }
-
-    // Away Team Kit Switching
-
-    } else if (location == "Away") {
-
-        // 1. FC Nürnberg - White
-        if (awayname == "1. FC Nürnberg") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Nuernberg/Home.png';
-            } else {
-                return 'img/teams/Nuernberg/Away.png';
-            }
-
-        // 1. FSV Mainz 05 - White
-        } else if (awayname == "1. FSV Mainz 05") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Mainz/Third.png';
-            } else {
-                return 'img/teams/Mainz/Away.png';
-            }
-
-        // Bayer Leverkusen - Black
-        } else if (awayname == "Bayer 04 Leverkusen") {
-            if (homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Leverkusen/Third.png';
-            } else {
-                return 'img/teams/Leverkusen/Away.png';
-            }
-
-        // Borussia Dortmund - Black
-        } else if (awayname == "Borussia Dortmund") {
-            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07"){
-                return 'img/teams/Dortmund/Home.png';
-            } else {
-                return 'img/teams/Dortmund/Away.png';
-            }
-
-        // Borussia Mönchengladbach - Blue
-        } else if (awayname == 'Borussia Mönchengladbach') {
-            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
-                return 'img/teams/Gladbach/Home.png';
-            } else {
-                return 'img/teams/Gladbach/Away.png';
-            }
-
-        // Eintracht Frankfurt - White
-        } else if (awayname == "Eintracht Frankfurt") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Frankfurt/Third.png';
-            } else {
-                return 'img/teams/Frankfurt/Away.png';
-            }
-
-        // FC Augsburg - Black
-        } else if (awayname == "FC Augsburg") {
-            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07") {
-                return 'img/teams/Augsburg/Third.png';
-            } else {
-                return 'img/teams/Augsburg/Away.png';
-            }
-
-        // FC Bayern - White
-        } else if (awayname == "FC Bayern München") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Bayern/Home.png';
-            } else {
-                return 'img/teams/Bayern/Away.png';
-            }
-
-        // FC Schalke 04 - White
-        } else if (awayname == "FC Schalke 04") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Schalke/Home.png';
-            } else {
-                return 'img/teams/Schalke/Away.png';
-            }
-
-        // Fortuna Düsseldorf - Red
-        } else if (awayname == "TSV Fortuna 95 Düsseldorf") {
-            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
-                return 'img/teams/Duesseldorf/Third.png';
-            } else {
-                return 'img/teams/Duesseldorf/Away.png';
-            }
-
-        // Hannover 96 - Black
-        } else if (awayname == "Hannover 96") {
-            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07") {
-                return 'img/teams/Hannover/Third.png';
-            } else {
-                return 'img/teams/Hannover/Away.png';
-            }
-
-        // Hertha BSC - Red & Black
-        } else if (awayname == "Hertha BSC") {
-            if (homename == "Bayer 04 Leverkusen" || homename == "Eintracht Frankfurt" || homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin") {
-                return 'img/teams/Hertha/Home.png';
-            } else {
-                return 'img/teams/Hertha/Away.png';
-            }
-
-        // RB Leipzig - Dark Blue (Black and Blue)
-        } else if (awayname == "RB Leipzig") {
-            if (homename == "Eintracht Frankfurt" || homename == "VfL Wolfsburg" || homename == "SC Paderborn 07" || homename == "Bayer 04 Leverkusen" || homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
-                return 'img/teams/Leipzig/Home.png';
-            } else {
-                return 'img/teams/Leipzig/Away.png';
-            }
-
-        // SC Freiburg - White
-        } else if (awayname == "SC Freiburg") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "Arminia Bielefeld") {
-                return 'img/teams/Freiburg/HomeAlt.png';
-            } else {
-                return 'img/teams/Freiburg/Away.png';
-            }
-
-        // TSG 1899 Hoffenheim - Light Green
-        } else if (awayname == "TSG 1899 Hoffenheim") {
-            if (homename == "VfL Wolfsburg" || homename == "SV Werder Bremen" || homename == "FC Augsburg" || homename == "Borussia Mönchengladbach") {
-                return 'img/teams/Hoffenheim/Third.png';
-            } else {
-                return 'img/teams/Hoffenheim/Away.png';
-            }
-
-        // VfB Stuttgart - Red
-        } else if (awayname == "VfB Stuttgart") {
-            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf"){
-                return 'img/teams/Stuttgart/Third.png';
-            } else {
-                return 'img/teams/Stuttgart/Away.png';
-            }
-
-        // VfL Wolfsburg - Light Blue
-        } else if (awayname == "VfL Wolfsburg") {
-            if (homename == "FC Schalke 04" || homename == "Hertha BSC" || homename == "TSG 1899 Hoffenheim") {
-                return 'img/teams/Wolfsburg/Third.png';
-            } else {
-                return 'img/teams/Wolfsburg/Away.png';
-            }
-
-        // Werder Bremen - White
-        } else if (awayname == "SV Werder Bremen") {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Bremen/Home.png';
-            } else {
-                return 'img/teams/Bremen/Away.png';
-            }
-        
-        // SC Paderborn - White
-        } else if (awayname == 'SC Paderborn 07') {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig" || homename == "TSV Fortuna 95 Düsseldorf") {
-                return 'img/teams/Paderborn/Third.png';
-            } else {
-                return 'img/teams/Paderborn/Away.png';
-            }
-        
-        // FC Köln - Red
-        } else if (awayname == '1. FC Köln') {
-            if (homename == "Bayer 04 Leverkusen" || homename == "SC Freiburg" || homename == "FC Bayern München" || homename == "1. FC Nürnberg" || homename == "1. FSV Mainz 05" || homename == "Hannover 96" || homename == "TSV Fortuna 95 Düsseldorf" || homename == "1. FC Union Berlin"){
-                return 'img/teams/Koeln/Third.png';
-            } else {
-                return 'img/teams/Koeln/Away.png';
-            }
-        
-        // FC Union Berlin - White
-        } else if (awayname == '1. FC Union Berlin') {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Union/Third.png';
-            } else {
-                return 'img/teams/Union/Away.png';
-            }
-        
-        // DSC Arminia Bielefeld - White
-        } else if (awayname == 'Arminia Bielefeld') {
-            if (homename== "1. FC Köln" || homename == "VfB Stuttgart" || homename == "Borussia Mönchengladbach" || homename == "FC Augsburg" || homename == "RB Leipzig") {
-                return 'img/teams/Bielefeld/Home.png';
-            } else {
-                return 'img/teams/Bielefeld/Away.png';
-            }
-        }
+    if (home_team_kit.tone == away_team_kit.tone){
+        return third_kit;
+    } else {
+        return away_kit;
     }
 }
 
 // Constructs the ladder Items
-function ladderItem(array, number) {
-    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('span').text(teamAbrev(array.team.name)[0].name);  
-    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('img').attr('src', teamImg(array.team.name));  
-    $('.c-ladder__item-' + number + ' div.c-ladder__played').text(array.playedGames);
-    $('.c-ladder__item-' + number + ' div.c-ladder__wins').text(array.won);
-    $('.c-ladder__item-' + number + ' div.c-ladder__losses').text(array.lost);
-    $('.c-ladder__item-' + number + ' div.c-ladder__draws').text(array.draw);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points-for').text(array.goalsFor);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points-against').text(array.goalsAgainst);
-    $('.c-ladder__item-' + number + ' div.c-ladder__percentage').text(array.goalDifference);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points').text(array.points);
+function ladderItem(ladder_item, number, data_teams) {
+    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('span').text(data_teams[ladder_item.team.id].name);  
+    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('img').attr('src', data_teams[ladder_item.team.id].logo);  
+    $('.c-ladder__item-' + number + ' div.c-ladder__played').text(ladder_item.playedGames);
+    $('.c-ladder__item-' + number + ' div.c-ladder__wins').text(ladder_item.won);
+    $('.c-ladder__item-' + number + ' div.c-ladder__losses').text(ladder_item.lost);
+    $('.c-ladder__item-' + number + ' div.c-ladder__draws').text(ladder_item.draw);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points-for').text(ladder_item.goalsFor);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points-against').text(ladder_item.goalsAgainst);
+    $('.c-ladder__item-' + number + ' div.c-ladder__percentage').text(ladder_item.goalDifference);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points').text(ladder_item.points);
 }
 function roundCalc(d) {
    var currentDate = new Date(d);
@@ -680,223 +498,6 @@ function roundCalc(d) {
 
    }
 }
-function teamAbrev(array){
-    var team = array;
-
-    if (team == 'Eintracht Frankfurt') {
-        return [{
-            code: 'SGE',
-            name: 'Frankfurt'
-        }];
-    } else if (team == 'Borussia Dortmund') {
-        return [{
-            code: 'BVB',
-            name: 'Dortmund'
-        }];
-    } else if (team == 'VfB Stuttgart') {
-        return [{
-            code: 'STU',
-            name: 'Stuttgart'
-        }];
-    } else if (team == 'FC Schalke 04') {
-        return [{
-            code: 'S04',
-            name: 'Schalke'
-        }];
-    } else if (team == '1. FC Nürnberg') {
-        return [{
-            code: 'FCN',
-            name: 'Nürnberg'
-        }];
-    } else if (team == 'SV Werder Bremen') {
-        return [{
-            code: 'SVW',
-            name: 'Bremen'
-        }];
-    } else if (team == 'Hertha BSC') {
-        return [{
-            code: 'BSC',
-            name: 'Berlin'
-        }];
-    } else if (team == 'Hannover 96') {
-        return [{
-            code: 'HAN',
-            name: 'Hannover'
-        }];
-    } else if (team == "Borussia Mönchengladbach") {
-        return [{
-            code: 'BMG',
-            name: 'Gladbach'
-        }];
-    } else if (team == "FC Bayern München") {
-        return [{
-            code: 'MUN',
-            name: 'Bayern'
-        }];
-    } else if (team == "TSV Fortuna 95 Düsseldorf") {
-        return [{
-            code: 'DUS',
-            name: 'Düsseldorf'
-        }];
-    } else if (team == "Bayer 04 Leverkusen") {
-        return [{
-            code: 'B04',
-            name: 'Leverkusen'
-        }];
-    } else if (team == "SC Freiburg") {
-        return [{
-            code: 'SCF',
-            name: 'Freiburg'
-        }];
-    } else if (team == "VfL Wolfsburg") {
-        return [{
-            code: 'WOB',
-            name: 'Wolfsburg'
-        }];
-    } else if (team == "1. FSV Mainz 05") {
-        return [{
-            code: 'MAI',
-            name: 'Mainz'
-        }];
-    } else if (team == "TSG 1899 Hoffenheim") {
-        return [{
-            code: 'TSG',
-            name: 'Hoffenheim'
-        }];
-    } else if (team == "FC Augsburg") {
-        return [{
-            code: 'AUG',
-            name: 'Augsburg'
-        }];
-    } else if (team == "RB Leipzig") {
-        return [{
-            code: 'RBL',
-            name: 'Leipzig'
-        }];
-    } else if (team == "SC Paderborn 07") {
-        return [{
-            code: 'PAD',
-            name: 'Paderborn'
-        }];
-    } else if (team == "1. FC Köln") {
-        return [{
-            code: 'KLN',
-            name: 'Köln'
-        }];
-    } else if (team == "1. FC Union Berlin") {
-        return [{
-            code: 'UNB',
-            name: 'Union'
-        }];
-    } else if (team == "Arminia Bielefeld") {
-        return [{
-            code: 'ARB',
-            name: 'Bielefeld'
-        }];
-    }
-}
-
-// Applies the correct team image to the referenced team code.
-function teamImg(team) {
-    if (team == '1. FC Nürnberg') {
-        return 'img/teams/Nuernberg/Logo.png';
-    } else if (team == '1. FSV Mainz 05') {
-        return 'img/teams/Mainz/Logo.png';
-    } else if (team == 'Bayer 04 Leverkusen') {
-        return 'img/teams/Leverkusen/Logo.png';
-    } else if (team == 'Borussia Dortmund') {
-        return 'img/teams/Dortmund/Logo.png';
-    } else if (team == 'Borussia Mönchengladbach') {
-        return 'img/teams/Gladbach/Logo.png';
-    } else if (team == 'Eintracht Frankfurt') {
-        return 'img/teams/Frankfurt/Logo.png';
-    } else if (team == 'FC Augsburg') {
-        return 'img/teams/Augsburg/Logo.png';
-    } else if (team == 'FC Bayern München') {
-        return 'img/teams/Bayern/Logo.png';
-    } else if (team == 'FC Schalke 04') {
-        return 'img/teams/Schalke/Logo.png';
-    } else if (team == 'TSV Fortuna 95 Düsseldorf') {
-        return 'img/teams/Duesseldorf/Logo.png';
-    } else if (team == 'Hannover 96') {
-        return 'img/teams/Hannover/Logo.png';
-    } else if (team == 'Hertha BSC') {
-        return 'img/teams/Hertha/Logo.png';
-    } else if (team == 'RB Leipzig') {
-        return 'img/teams/Leipzig/Logo.png';
-    } else if (team == 'SC Freiburg') {
-        return 'img/teams/Freiburg/Logo.png';
-    } else if (team == 'TSG 1899 Hoffenheim') {
-        return 'img/teams/Hoffenheim/Logo.png';
-    } else if (team == 'VfB Stuttgart') {
-        return 'img/teams/Stuttgart/Logo.png';
-    } else if (team == 'VfL Wolfsburg') {
-        return 'img/teams/Wolfsburg/Logo.png';
-    } else if (team == 'SV Werder Bremen') {
-        return 'img/teams/Bremen/Logo.png';
-    } else if (team == 'SC Paderborn 07') {
-        return 'img/teams/Paderborn/Logo.png';
-    } else if (team == '1. FC Köln') {
-        return 'img/teams/Koeln/Logo.png';
-    } else if (team == '1. FC Union Berlin') {
-        return 'img/teams/Union/Logo.png';
-    } else if (team == 'Arminia Bielefeld') {
-        return 'img/teams/Bielefeld/Logo.png';
-    }
-}
-//
-// Layout - Vertically Centered
-// ==========================================================================
-
-// ***
-// This function vertically centers an object element within 
-// its parent element by calculating the height of the parent,
-// the height of the child and adding padding to the top and 
-// bottom of the child element.
-//
-// Parent Element
-// --------------
-// The parent element must be a jQuery object.
-// eg: $('.o-vert-center')
-//
-// Child Element
-// -------------
-// The child element must be a direct child of the parent and
-// be passed through the function with only its classname.
-// eg: '.o-vert-center__object'
-// *
-
-function vertCenter(element, child) {
-
-    var parentHeight = element.parent().height();
-    // This will give the element the same height
-    // and line-height as it's parent container.
-    element.css({
-        'height': parentHeight + 'px',
-        'line-height': parentHeight + 'px'
-    });
-    
-    element.children(child).css({
-        'height': element.children(child).height(),
-        'padding-top': ( parentHeight - element.children(child).height() )/2 + 'px',
-        'padding-bottom': ( parentHeight - element.children(child).height() )/2 + 'px'
-    });
-}
-
-function clearStyles(element, child) {
-    element.attr('style', '');
-    child.attr('style', '');
-}
-
-// Function applied to the following parent/child classes:
-// vertCenter($('.o-vert-center'), '.o-vert-center__object');
-
-// On window resize clear previous styles then re-run the function.
-$(window).on('resize', function() {
-    // clearStyles($('.o-vert-center'), $('.o-vert-center__object'));
-    // vertCenter($('.o-vert-center'), '.o-vert-center__object');
-});
-
 
 //
 // UI - Buttons

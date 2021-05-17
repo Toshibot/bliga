@@ -1,5 +1,6 @@
 {
-    "Freiburg":{
+    "17":{
+        "name": "Freiburg",
         "logo":"img/teams/Freiburg/Logo.png",
         "kits":{
             "home":{
@@ -8,13 +9,19 @@
                 "file":"img/teams/Freiburg/Home.png"
             },
             "away":{
-                "tone":"light",
-                "color":"white",
+                "tone":"dark",
+                "color":"black",
                 "file":"img/teams/Freiburg/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"yellow",
+                "file":"img/teams/Freiburg/Third.png"
             }
         }
     },
-    "Bayern":{
+    "5":{
+        "name": "Bayern",
         "logo":"img/teams/Bayern/Logo.png",
         "kits":{
             "home":{
@@ -26,10 +33,16 @@
                 "tone":"light",
                 "color":"white",
                 "file":"img/teams/Bayern/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"red",
+                "file":"img/teams/Bayern/Home.png"
             }
         }
     },
-    "Dortmund":{
+    "4":{
+        "name": "Dortmund",
         "logo":"img/teams/Dortmund/Logo.png",
         "kits":{
             "home":{
@@ -41,10 +54,16 @@
                 "tone":"dark",
                 "color":"red",
                 "file":"img/teams/Dortmund/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"yellow",
+                "file":"img/teams/Dortmund/Home.png"
             }
         }
     },
-    "Hertha":{
+    "9":{
+        "name": "Hertha",
         "logo":"img/teams/Hertha/Logo.png",
         "kits":{
             "home":{
@@ -56,10 +75,16 @@
                 "tone":"dark",
                 "color":"black",
                 "file":"img/teams/Hertha/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"blue",
+                "file":"img/teams/Hertha/Home.png"
             }
         }
     },
-    "Augsburg":{
+    "16":{
+        "name": "Augsburg",
         "logo":"img/teams/Augsburg/Logo.png",
         "kits":{
             "home":{
@@ -79,7 +104,8 @@
             }
         }
     },
-    "Bremen":{
+    "12":{
+        "name": "Bremen",
         "logo":"img/teams/Bremen/Logo.png",
         "kits":{
             "home":{
@@ -88,14 +114,14 @@
                 "file":"img/teams/Bremen/Home.png"
             },
             "away":{
-                "tone":"dark",
-                "color":"black",
+                "tone":"light",
+                "color":"white",
                 "file":"img/teams/Bremen/Away.png"
             },
             "third":{
                 "tone":"light",
                 "color":"white",
-                "file":"img/teams/Bremen/Third.png"
+                "file":"img/teams/Bremen/Home.png"
             }
         }
     },
@@ -111,10 +137,16 @@
                 "tone":"dark",
                 "color":"brown",
                 "file":"img/teams/Duesseldorf/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"red",
+                "file":"img/teams/Duesseldorf/Home.png"
             }
         }
     },
-    "Frankfurt":{
+    "19":{
+        "name": "Frankfurt",
         "logo":"img/teams/Frankfurt/Logo.png",
         "kits":{
             "home":{
@@ -126,10 +158,16 @@
                 "tone":"light",
                 "color":"white",
                 "file":"img/teams/Frankfurt/Away.png"
+            },
+            "third":{
+                "tone":"dark",
+                "color":"black",
+                "file":"img/teams/Frankfurt/Home.png"
             }
         }
     },
-    "Gladbach":{
+    "18":{
+        "name": "Gladbach",
         "logo":"img/teams/Gladbach/Logo.png",
         "kits":{
             "home":{
@@ -141,10 +179,16 @@
                 "tone":"dark",
                 "color":"black",
                 "file":"img/teams/Gladbach/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Gladbach/Home.png"
             }
         }
     },
     "Hannover":{
+        "name": "Hannover",
         "logo":"img/teams/Hannover/Logo.png",
         "kits":{
             "home":{
@@ -156,10 +200,16 @@
                 "tone":"dark",
                 "color":"black",
                 "file":"img/teams/Hannover/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"red",
+                "file":"img/teams/Hannover/Home.png"
             }
         }
     },
-    "Hoffenheim":{
+    "2":{
+        "name": "Hoffenheim",
         "logo":"img/teams/Hoffenheim/Logo.png",
         "kits":{
             "home":{
@@ -179,7 +229,8 @@
             }
         }
     },
-    "Leipzig":{
+    "721":{
+        "name": "Leipzig",
         "logo":"img/teams/Leipzig/Logo.png",
         "kits":{
             "home":{
@@ -191,10 +242,16 @@
                 "tone":"dark",
                 "color":"blue",
                 "file":"img/teams/Leipzig/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Leipzig/Home.png"
             }
         }
     },
-    "Leverkusen":{
+    "3":{
+        "name": "Leverkusen",
         "logo":"img/teams/Leverkusen/Logo.png",
         "kits":{
             "home":{
@@ -214,7 +271,8 @@
             }
         }
     },
-    "Mainz":{
+    "15":{
+        "name": "Mainz",
         "logo":"img/teams/Mainz/Logo.png",
         "kits":{
             "home":{
@@ -235,6 +293,7 @@
         }
     },
     "Nuernberg":{
+        "name": "Nuernberg",
         "logo":"img/teams/Nuernberg/Logo.png",
         "kits":{
             "home":{
@@ -246,10 +305,16 @@
                 "tone":"light",
                 "color":"white",
                 "file":"img/teams/Nuernberg/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"red",
+                "file":"img/teams/Nuernberg/Home.png"
             }
         }
     },
-    "Schalke":{
+    "6":{
+        "name": "Schalke",
         "logo":"img/teams/Schalke/Logo.png",
         "kits":{
             "home":{
@@ -261,10 +326,16 @@
                 "tone":"light",
                 "color":"white",
                 "file":"img/teams/Schalke/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"blue",
+                "file":"img/teams/Schalke/Home.png"
             }
         }
     },
-    "Stuttgart":{
+    "10":{
+        "name": "Stuttgart",
         "logo":"img/teams/Stuttgart/Logo.png",
         "kits":{
             "home":{
@@ -284,7 +355,8 @@
             }
         }
     },
-    "Wolfsburg":{
+    "11":{
+        "name": "Wolfsburg",
         "logo":"img/teams/Wolfsburg/Logo.png",
         "kits":{
             "home":{
@@ -296,6 +368,74 @@
                 "tone":"light",
                 "color":"white",
                 "file":"img/teams/Wolfsburg/Away.png"
+            },
+            "third":{
+                "tone":"mid",
+                "color":"green",
+                "file":"img/teams/Wolfsburg/Home.png"
+            }
+        }
+    },
+    "28":{
+        "name": "Union",
+        "logo":"img/teams/Union/Logo.png",
+        "kits":{
+            "home":{
+                "tone":"light",
+                "color":"yellow",
+                "file":"img/teams/Union/Home.png"
+            },
+            "away":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Union/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"yellow",
+                "file":"img/teams/Union/Home.png"
+            }
+        }
+    },
+    "38":{
+        "name": "Bielefeld",
+        "logo":"img/teams/Bielefeld/Logo.png",
+        "kits":{
+            "home":{
+                "tone":"dark",
+                "color":"black",
+                "file":"img/teams/Bielefeld/Home.png"
+            },
+            "away":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Bielefeld/Away.png"
+            },
+            "third":{
+                "tone":"dark",
+                "color":"black",
+                "file":"img/teams/Bielefeld/Home.png"
+            }
+        }
+    },
+    "1":{
+        "name": "Köln",
+        "logo":"img/teams/Koeln/Logo.png",
+        "kits":{
+            "home":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Koeln/Home.png"
+            },
+            "away":{
+                "tone":"mid",
+                "color":"red",
+                "file":"img/teams/Koeln/Away.png"
+            },
+            "third":{
+                "tone":"dark",
+                "color":"black",
+                "file":"img/teams/Koeln/Third.png"
             }
         }
     }

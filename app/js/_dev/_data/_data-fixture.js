@@ -2,7 +2,7 @@
 
 // Data - Fixture/Results
 
-function dataFixture() {
+function dataFixture(data_teams) {
 
     // Variables
     var self = this;
@@ -62,9 +62,9 @@ function dataFixture() {
         console.log(data);
 
         for (i = 0; i < currentRound.length; i++) {
-            const element = currentRound[i];
+            const match = currentRound[i];
 
-            fixtureItem(element);
+            fixtureItem(match, data_teams);
         }
     })
 }

@@ -1,14 +1,14 @@
 
 // Constructs the ladder Items
-function ladderItem(array, number) {
-    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('span').text(teamAbrev(array.team.name)[0].name);  
-    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('img').attr('src', teamImg(array.team.name));  
-    $('.c-ladder__item-' + number + ' div.c-ladder__played').text(array.playedGames);
-    $('.c-ladder__item-' + number + ' div.c-ladder__wins').text(array.won);
-    $('.c-ladder__item-' + number + ' div.c-ladder__losses').text(array.lost);
-    $('.c-ladder__item-' + number + ' div.c-ladder__draws').text(array.draw);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points-for').text(array.goalsFor);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points-against').text(array.goalsAgainst);
-    $('.c-ladder__item-' + number + ' div.c-ladder__percentage').text(array.goalDifference);
-    $('.c-ladder__item-' + number + ' div.c-ladder__points').text(array.points);
+function ladderItem(ladder_item, number, data_teams) {
+    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('span').text(data_teams[ladder_item.team.id].name);  
+    $('.c-ladder__item-' + number + ' div.c-ladder__team').children('img').attr('src', data_teams[ladder_item.team.id].logo);  
+    $('.c-ladder__item-' + number + ' div.c-ladder__played').text(ladder_item.playedGames);
+    $('.c-ladder__item-' + number + ' div.c-ladder__wins').text(ladder_item.won);
+    $('.c-ladder__item-' + number + ' div.c-ladder__losses').text(ladder_item.lost);
+    $('.c-ladder__item-' + number + ' div.c-ladder__draws').text(ladder_item.draw);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points-for').text(ladder_item.goalsFor);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points-against').text(ladder_item.goalsAgainst);
+    $('.c-ladder__item-' + number + ' div.c-ladder__percentage').text(ladder_item.goalDifference);
+    $('.c-ladder__item-' + number + ' div.c-ladder__points').text(ladder_item.points);
 }
