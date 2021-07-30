@@ -28,44 +28,53 @@ function dataFixture(data_teams) {
        return $.ajax(request);
     }
 
-    // Matchday
-    self.ajax(self.matchdayURI, 'GET').done(function(data){
-        var competitions = data.competitions;
-        console.log(competitions);
+    function match_day(fixture){
+        // Matchday
+        self.ajax(self.matchdayURI, 'GET').done(function(data){
+            var competitions = data.competitions;
+            console.log(competitions);
 
-        for (i = 0; i < competitions.length; i++) {
-            const comp = competitions[i];
-            
-            if (comp.id == 2002) {
-                matchday.push(comp.currentSeason.currentMatchday);
+            for (i = 0; i < competitions.length; i++) {
+                const comp = competitions[i];
+                
+                if (comp.id == 2002) {
+                    matchday.push(comp.currentSeason.currentMatchday);
+                }
             }
-        }
-    });
+        });
+        fixture;
+    }
 
-    self.ajax(self.matchesURI, 'GET').done(function(data) {
+    function fixture(){
 
-        var matches = data.matches;
-        var today = new Date;
-        var testDate = new Date('2018-04-24');
-        var currentRound = [];
-        var currentRoundNo = matchday[0];
-
-        $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
-
-        for (i = 0; i < matches.length; i++) {
-            const element = matches[i];
-            
-            if (element.matchday == currentRoundNo) {
-                currentRound.push(element);
+        self.ajax(self.matchesURI, 'GET').done(function(data) {
+    
+            var matches = data.matches;
+            var today = new Date;
+            var testDate = new Date('2018-04-24');
+            var currentRound = [];
+            var currentRoundNo = matchday[0];
+    
+            $('.js-fixture-round').text(currentRoundNo + ". Spieltag");
+    
+            for (i = 0; i < matches.length; i++) {
+                const element = matches[i];
+                
+                if (element.matchday == currentRoundNo) {
+                    currentRound.push(element);
+                }
             }
-        }
+    
+            console.log(data);
+    
+            for (i = 0; i < currentRound.length; i++) {
+                const match = currentRound[i];
+    
+                fixtureItem(match, data_teams);
+            }
+        })
 
-        console.log(data);
+    }
 
-        for (i = 0; i < currentRound.length; i++) {
-            const match = currentRound[i];
-
-            fixtureItem(match, data_teams);
-        }
-    })
+    match_day(fixture());
 }
