@@ -15,7 +15,7 @@
             },
             "third":{
                 "tone":"light",
-                "color":"yellow",
+                "color":"blue",
                 "file":"img/teams/Freiburg/Third.png"
             }
         }
@@ -30,8 +30,8 @@
                 "file":"img/teams/Bayern/Home.png"
             },
             "away":{
-                "tone":"light",
-                "color":"white",
+                "tone":"dark",
+                "color":"black",
                 "file":"img/teams/Bayern/Away.png"
             },
             "third":{
@@ -67,18 +67,18 @@
         "logo":"img/teams/Hertha/Logo.png",
         "kits":{
             "home":{
-                "tone":"mid",
-                "color":"blue",
+                "tone":"light",
+                "color":"white",
                 "file":"img/teams/Hertha/Home.png"
             },
             "away":{
                 "tone":"dark",
-                "color":"black",
+                "color":"blue",
                 "file":"img/teams/Hertha/Away.png"
             },
             "third":{
-                "tone":"mid",
-                "color":"blue",
+                "tone":"light",
+                "color":"white",
                 "file":"img/teams/Hertha/Home.png"
             }
         }
@@ -276,19 +276,19 @@
         "logo":"img/teams/Mainz/Logo.png",
         "kits":{
             "home":{
-                "tone":"mid",
-                "color":"red",
+                "tone":"light",
+                "color":"white",
                 "file":"img/teams/Mainz/Home.png"
             },
             "away":{
-                "tone":"mid",
-                "color":"blue",
+                "tone":"dark",
+                "color":"black",
                 "file":"img/teams/Mainz/Away.png"
             },
             "third":{
-                "tone":"dark",
-                "color":"black",
-                "file":"img/teams/Mainz/Third.png"
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Mainz/home.png"
             }
         }
     },
@@ -349,9 +349,9 @@
                 "file":"img/teams/Stuttgart/Away.png"
             },
             "third":{
-                "tone":"dark",
-                "color":"black",
-                "file":"img/teams/Stuttgart/Third.png"
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Stuttgart/Home.png"
             }
         }
     },
@@ -436,6 +436,48 @@
                 "tone":"dark",
                 "color":"black",
                 "file":"img/teams/Koeln/Third.png"
+            }
+        }
+    },
+    "36":{
+        "name": "Bochum",
+        "logo":"img/teams/Bochum/Logo.png",
+        "kits":{
+            "home":{
+                "tone":"dark",
+                "color":"blue",
+                "file":"img/teams/Bochum/Home.png"
+            },
+            "away":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Bochum/Away.png"
+            },
+            "third":{
+                "tone":"dark",
+                "color":"blue",
+                "file":"img/teams/Bochum/Home.png"
+            }
+        }
+    },
+    "21":{
+        "name": "Fürth",
+        "logo":"img/teams/Fuerth/Logo.png",
+        "kits":{
+            "home":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Fuerth/Home.png"
+            },
+            "away":{
+                "tone":"dark",
+                "color":"black",
+                "file":"img/teams/Fuerth/Away.png"
+            },
+            "third":{
+                "tone":"light",
+                "color":"white",
+                "file":"img/teams/Fuerth/Home.png"
             }
         }
     }

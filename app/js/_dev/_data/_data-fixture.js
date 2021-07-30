@@ -31,6 +31,7 @@ function dataFixture(data_teams) {
     // Matchday
     self.ajax(self.matchdayURI, 'GET').done(function(data){
         var competitions = data.competitions;
+        console.log(competitions);
 
         for (i = 0; i < competitions.length; i++) {
             const comp = competitions[i];
