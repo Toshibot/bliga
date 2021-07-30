@@ -7,8 +7,8 @@ function dataFixture(data_teams) {
     // Variables
     var self = this;
     var matchday = [];
-    self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
     self.matchdayURI = "https://api.football-data.org/v2/competitions";
+    self.matchesURI = "https://api.football-data.org/v2/competitions/2002/matches";
 
     self.ajax = function(uri, method, data) {
        var request = {
